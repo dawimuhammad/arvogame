@@ -15,6 +15,8 @@
 		B7C39C1D24C1922300214EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C1B24C1922300214EA4 /* Main.storyboard */; };
 		B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C1E24C1922400214EA4 /* Assets.xcassets */; };
 		B7C39C2224C1922400214EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C2024C1922400214EA4 /* LaunchScreen.storyboard */; };
+		B7DE4E3324C83B5400FB36CB /* PrologScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B7DE4E3224C83B5400FB36CB /* PrologScene.sks */; };
+		B7DE4E3524C83B7700FB36CB /* PrologScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE4E3424C83B7700FB36CB /* PrologScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		B7C39C1E24C1922400214EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C39C2124C1922400214EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7C39C2324C1922400214EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7DE4E3224C83B5400FB36CB /* PrologScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PrologScene.sks; sourceTree = "<group>"; };
+		B7DE4E3424C83B7700FB36CB /* PrologScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		B7C39C1024C1922300214EA4 /* arvogame */ = {
 			isa = PBXGroup;
 			children = (
+				B7DE4E3024C83AE700FB36CB /* Scenes */,
 				B7C39C1124C1922300214EA4 /* AppDelegate.swift */,
 				B7C39C1324C1922300214EA4 /* GameScene.sks */,
 				B7C39C1524C1922300214EA4 /* Actions.sks */,
@@ -71,6 +76,23 @@
 				B7C39C2324C1922400214EA4 /* Info.plist */,
 			);
 			path = arvogame;
+			sourceTree = "<group>";
+		};
+		B7DE4E3024C83AE700FB36CB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B7DE4E3124C83B1200FB36CB /* Prolog */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B7DE4E3124C83B1200FB36CB /* Prolog */ = {
+			isa = PBXGroup;
+			children = (
+				B7DE4E3224C83B5400FB36CB /* PrologScene.sks */,
+				B7DE4E3424C83B7700FB36CB /* PrologScene.swift */,
+			);
+			path = Prolog;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C39C1D24C1922300214EA4 /* Main.storyboard in Resources */,
+				B7DE4E3324C83B5400FB36CB /* PrologScene.sks in Resources */,
 				B7C39C1424C1922300214EA4 /* GameScene.sks in Resources */,
 				B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */,
 				B7C39C2224C1922400214EA4 /* LaunchScreen.storyboard in Resources */,
@@ -147,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C39C1824C1922300214EA4 /* GameScene.swift in Sources */,
+				B7DE4E3524C83B7700FB36CB /* PrologScene.swift in Sources */,
 				B7C39C1A24C1922300214EA4 /* GameViewController.swift in Sources */,
 				B7C39C1224C1922300214EA4 /* AppDelegate.swift in Sources */,
 			);
