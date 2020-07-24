@@ -16,9 +16,13 @@ class PrologScene: SKScene {
     var myCounter = 0
     var timer:Timer?
     
+    var skipButton: SKSpriteNode!
+    
     override func didMove(to view: SKView) {
         constructBackground()
         constructPrologMessage()
+        
+        skipButton = (childNode(withName: "//SkipButton") as! SKSpriteNode)
     }
     
     func constructBackground() {
@@ -46,7 +50,7 @@ class PrologScene: SKScene {
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(PrologScene.typeLetter), userInfo: nil, repeats: true)
     }
     
-    @objc func typeLetter(){
+    @objc func typeLetter() {
         if myCounter < myText.count {
             prologMessageLabelNode?.text = (prologMessageLabelNode?.text!)! + String(myText[myCounter])
 
@@ -56,5 +60,18 @@ class PrologScene: SKScene {
             timer?.invalidate()
         }
         myCounter += 1
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        
+        if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
+            if node == skipButton {
+                if let scene = SKScene(fileNamed: "HomeScene") {
+                    scene.scaleMode = .aspectFill
+                    view?.presentScene(scene)
+                }
+            }
+        }
     }
 }
