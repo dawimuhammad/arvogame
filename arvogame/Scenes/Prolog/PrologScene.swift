@@ -16,13 +16,13 @@ class PrologScene: SKScene {
     var myCounter = 0
     var timer:Timer?
     
-    var skipButton: SKSpriteNode!
+    var buttonSkip: SKLabelNode!
     
     override func didMove(to view: SKView) {
         constructBackground()
         constructPrologMessage()
         
-        skipButton = (childNode(withName: "//SkipButton") as! SKSpriteNode)
+        buttonSkip = (childNode(withName: "//SkipButtonText") as! SKLabelNode)
     }
     
     func constructBackground() {
@@ -65,8 +65,8 @@ class PrologScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         
-        if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
-            if node == skipButton {
+        if let node = self.nodes(at: touch.location(in: self)).first as? SKLabelNode {
+            if node == buttonSkip {
                 if let scene = SKScene(fileNamed: "HomeScene") {
                     scene.scaleMode = .aspectFill
                     view?.presentScene(scene)
