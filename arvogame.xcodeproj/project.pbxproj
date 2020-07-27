@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0D3CE524CAD67700349EA7 /* LoadingPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D3CE424CAD67700349EA7 /* LoadingPage.storyboard */; };
+		3F0D3CE624CAEA5000349EA7 /* LoadingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D3CE224CAD65E00349EA7 /* LoadingPageVC.swift */; };
 		B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B76CED5E24C98FC600E16060 /* HomeScene.sks */; };
 		B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76CED6024C98FD400E16060 /* HomeScene.swift */; };
 		B7C39C1224C1922300214EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C39C1124C1922300214EA4 /* AppDelegate.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0D3CE224CAD65E00349EA7 /* LoadingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingPageVC.swift; sourceTree = "<group>"; };
+		3F0D3CE424CAD67700349EA7 /* LoadingPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingPage.storyboard; sourceTree = "<group>"; };
 		B76CED5E24C98FC600E16060 /* HomeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HomeScene.sks; sourceTree = "<group>"; };
 		B76CED6024C98FD400E16060 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		B7C39C0E24C1922300214EA4 /* arvogame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arvogame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +87,8 @@
 				B7C39C1524C1922300214EA4 /* Actions.sks */,
 				B7C39C1724C1922300214EA4 /* GameScene.swift */,
 				B7C39C1924C1922300214EA4 /* GameViewController.swift */,
+				3F0D3CE224CAD65E00349EA7 /* LoadingPageVC.swift */,
+				3F0D3CE424CAD67700349EA7 /* LoadingPage.storyboard */,
 				B7C39C1B24C1922300214EA4 /* Main.storyboard */,
 				B7C39C1E24C1922400214EA4 /* Assets.xcassets */,
 				B7C39C2024C1922400214EA4 /* LaunchScreen.storyboard */,
@@ -169,6 +175,7 @@
 			files = (
 				B7C39C1D24C1922300214EA4 /* Main.storyboard in Resources */,
 				B7DE4E3324C83B5400FB36CB /* PrologScene.sks in Resources */,
+				3F0D3CE524CAD67700349EA7 /* LoadingPage.storyboard in Resources */,
 				B7C39C1424C1922300214EA4 /* GameScene.sks in Resources */,
 				B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */,
 				B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */,
@@ -184,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0D3CE624CAEA5000349EA7 /* LoadingPageVC.swift in Sources */,
 				B7C39C1824C1922300214EA4 /* GameScene.swift in Sources */,
 				B7DE4E3524C83B7700FB36CB /* PrologScene.swift in Sources */,
 				B7C39C1A24C1922300214EA4 /* GameViewController.swift in Sources */,
