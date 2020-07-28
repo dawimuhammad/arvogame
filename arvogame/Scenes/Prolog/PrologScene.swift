@@ -16,14 +16,13 @@ class PrologScene: SKScene {
     var buttonSkip: SKLabelNode!
     var buttonNextProlog: SKSpriteNode!
     var bgImage: SKSpriteNode!
+    var timer: Timer?
+    var prologBacksongAudio = AVAudioPlayer()
     
     let messages = [(Array("Duh, tiap baca berita selalu tentang kebakaran lahan ... sebetulnya apa sih yang sedang terjadi di negara ini??")), (Array(" Aku harus ikut membantu nih ..."))]
     
     var prologScenes = 0
     var messageStringCounter = 0
-    var timer: Timer?
-    
-    var prologBacksongAudio = AVAudioPlayer()
     
     override func didMove(to view: SKView) {
         buttonSkip = (childNode(withName: "//SkipButtonText") as! SKLabelNode)
@@ -35,8 +34,6 @@ class PrologScene: SKScene {
     }
     
     func setupPrologMessage() {
-        print("prologScenes \(prologScenes)")
-        
         switch prologScenes {
         case 0...1:
             constructBackground()
@@ -54,8 +51,6 @@ class PrologScene: SKScene {
         bgImage.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         bgImage.position = CGPoint(x: 0, y: 0)
         bgImage.zPosition = CGFloat(prologScenes)
-        
-        print("Index Bg Image \(prologScenes)")
         
         self.addChild(bgImage)
     }
