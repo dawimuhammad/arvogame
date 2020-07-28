@@ -100,6 +100,7 @@ class PrologScene: SKScene {
         if let node = self.nodes(at: touch.location(in: self)).first as? SKLabelNode {
             if node == buttonSkip {
                 if let scene = SKScene(fileNamed: "HomeScene") {
+                    prologBacksongAudio.stop()
                     scene.scaleMode = .aspectFill
                     view?.presentScene(scene)
                 }

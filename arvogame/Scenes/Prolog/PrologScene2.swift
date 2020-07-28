@@ -87,6 +87,7 @@ class PrologScene2: SKScene {
                timer?.invalidate()
             
                 if let scene = SKScene(fileNamed: "HomeScene") {
+                    prolog2BacksongAudio.stop()
                     scene.scaleMode = .aspectFill
                     view?.presentScene(scene)
                 }
@@ -95,13 +96,13 @@ class PrologScene2: SKScene {
            myCounter += 1
        }
        
-       
        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
            guard let touch = touches.first else { return }
            
            if let node = self.nodes(at: touch.location(in: self)).first as? SKLabelNode {
                if node == buttonSkip {
                    if let scene = SKScene(fileNamed: "HomeScene") {
+                       prolog2BacksongAudio.stop()
                        scene.scaleMode = .aspectFill
                        view?.presentScene(scene)
                    }
