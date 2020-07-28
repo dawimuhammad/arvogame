@@ -29,22 +29,21 @@ class LoadingPage: UIViewController {
     }
     
     func randomContent(){
-        let imageName = [#imageLiteral(resourceName: "snake"), #imageLiteral(resourceName: <#T##String#>), #imageLiteral(resourceName: <#T##String#>)]
-        var randomName = imageName.randomElement()
+        let imageName = [#imageLiteral(resourceName: "snake"), #imageLiteral(resourceName: "snake"), #imageLiteral(resourceName: "snake")]
+        let randomName = imageName.randomElement()
         loadingImage.image = randomName
         
-        if loadingImage.image == #imageLiteral(resourceName: "snake"){
+        if loadingImage.image == #imageLiteral(resourceName: "snake") {
             descriptionLoading.text = "test test test"
-            
         }
         
-        else if loadingImage.image == #imageLiteral(resourceName: <#T##String#>) {
-            descriptionLoading.text = "test test test"
-        }
-            
-        else if loadingImage.image == #imageLiteral(resourceName: <#T##String#>) {
-            descriptionLoading.text = "test test test"
-        }
+//        else if loadingImage.image == #imageLiteral(resourceName: <#T##String#>) {
+//            descriptionLoading.text = "test test test"
+//        }
+//
+//        else if loadingImage.image == #imageLiteral(resourceName: <#T##String#>) {
+//            descriptionLoading.text = "test test test"
+//        }
     }
     
     
