@@ -11,15 +11,12 @@
 		3F0D3CE624CAEA5000349EA7 /* LoadingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D3CE224CAD65E00349EA7 /* LoadingPageVC.swift */; };
 		B727D9FE24CAD842008A9834 /* 8-BIT-WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B727D9FC24CAD842008A9834 /* 8-BIT-WONDER.TTF */; };
 		B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B727D9FD24CAD842008A9834 /* PRESSSTART2P.TTF */; };
-		B727DA0124CB288F008A9834 /* PrologScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B727DA0024CB288F008A9834 /* PrologScene2.swift */; };
-		B727DA0324CB28A8008A9834 /* PrologScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = B727DA0224CB28A8008A9834 /* PrologScene2.sks */; };
 		B75E965324D02FDC00F3A29D /* HomeScene+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75E965224D02FDC00F3A29D /* HomeScene+ExtensionSound.swift */; };
 		B75E965524D0327D00F3A29D /* BGM-Home.wav in Resources */ = {isa = PBXBuildFile; fileRef = B75E965424D0327D00F3A29D /* BGM-Home.wav */; };
 		B75E965824D0344200F3A29D /* button_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = B75E965724D0344200F3A29D /* button_click.wav */; };
 		B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B76CED5E24C98FC600E16060 /* HomeScene.sks */; };
 		B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76CED6024C98FD400E16060 /* HomeScene.swift */; };
 		B7A1C21F24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C21E24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift */; };
-		B7A1C22224CEDD1B002B77D5 /* PrologScene2+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C22124CEDD1B002B77D5 /* PrologScene2+ExtensionSound.swift */; };
 		B7A1C23724CF0FED002B77D5 /* BGM-Intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7A1C23124CF0FED002B77D5 /* BGM-Intro.mp3 */; };
 		B7C39C1224C1922300214EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C39C1124C1922300214EA4 /* AppDelegate.swift */; };
 		B7C39C1424C1922300214EA4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C1324C1922300214EA4 /* GameScene.sks */; };
@@ -38,15 +35,12 @@
 		3F0D3CE424CAD67700349EA7 /* LoadingPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoadingPage.storyboard; sourceTree = "<group>"; };
 		B727D9FC24CAD842008A9834 /* 8-BIT-WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-BIT-WONDER.TTF"; sourceTree = "<group>"; };
 		B727D9FD24CAD842008A9834 /* PRESSSTART2P.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PRESSSTART2P.TTF; sourceTree = "<group>"; };
-		B727DA0024CB288F008A9834 /* PrologScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologScene2.swift; sourceTree = "<group>"; };
-		B727DA0224CB28A8008A9834 /* PrologScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PrologScene2.sks; sourceTree = "<group>"; };
 		B75E965224D02FDC00F3A29D /* HomeScene+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeScene+ExtensionSound.swift"; sourceTree = "<group>"; };
 		B75E965424D0327D00F3A29D /* BGM-Home.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "BGM-Home.wav"; sourceTree = "<group>"; };
 		B75E965724D0344200F3A29D /* button_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_click.wav; sourceTree = "<group>"; };
 		B76CED5E24C98FC600E16060 /* HomeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HomeScene.sks; sourceTree = "<group>"; };
 		B76CED6024C98FD400E16060 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		B7A1C21E24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrologScene+ExtensionSound.swift"; sourceTree = "<group>"; };
-		B7A1C22124CEDD1B002B77D5 /* PrologScene2+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrologScene2+ExtensionSound.swift"; sourceTree = "<group>"; };
 		B7A1C23124CF0FED002B77D5 /* BGM-Intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "BGM-Intro.mp3"; path = "../../../../../Assets/Audio/Backgrounds/BGM-Intro.mp3"; sourceTree = "<group>"; };
 		B7C39C0E24C1922300214EA4 /* arvogame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arvogame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C39C1124C1922300214EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -177,10 +171,7 @@
 			children = (
 				B7DE4E3224C83B5400FB36CB /* PrologScene.sks */,
 				B7DE4E3424C83B7700FB36CB /* PrologScene.swift */,
-				B727DA0224CB28A8008A9834 /* PrologScene2.sks */,
-				B727DA0024CB288F008A9834 /* PrologScene2.swift */,
 				B7A1C21E24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift */,
-				B7A1C22124CEDD1B002B77D5 /* PrologScene2+ExtensionSound.swift */,
 			);
 			path = Prolog;
 			sourceTree = "<group>";
@@ -244,7 +235,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7A1C23724CF0FED002B77D5 /* BGM-Intro.mp3 in Resources */,
-				B727DA0324CB28A8008A9834 /* PrologScene2.sks in Resources */,
 				B7C39C1D24C1922300214EA4 /* Main.storyboard in Resources */,
 				B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */,
 				B7DE4E3324C83B5400FB36CB /* PrologScene.sks in Resources */,
@@ -267,11 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7A1C22224CEDD1B002B77D5 /* PrologScene2+ExtensionSound.swift in Sources */,
 				3F0D3CE624CAEA5000349EA7 /* LoadingPageVC.swift in Sources */,
 				B7C39C1824C1922300214EA4 /* GameScene.swift in Sources */,
 				B7DE4E3524C83B7700FB36CB /* PrologScene.swift in Sources */,
-				B727DA0124CB288F008A9834 /* PrologScene2.swift in Sources */,
 				B75E965324D02FDC00F3A29D /* HomeScene+ExtensionSound.swift in Sources */,
 				B7C39C1A24C1922300214EA4 /* GameViewController.swift in Sources */,
 				B7A1C21F24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift in Sources */,
