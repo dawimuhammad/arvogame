@@ -8,15 +8,21 @@
 
 import Foundation
 import SpriteKit
+import AVFoundation
 
 class HomeScene: SKScene {
     var buttonStart: SKSpriteNode!
+    var homeBacksongAudio = AVAudioPlayer()
+    var buttonStartAudio = AVAudioPlayer()
     
     override func didMove(to view: SKView) {
         constructBackground()
         constructLogo()
         
         buttonStart = (childNode(withName: "//ButtonStart") as! SKSpriteNode)
+        
+        setupHomesceneBacksongAudio()
+        setupButtonStartAudio()
     }
     
     func constructBackground() {
@@ -48,6 +54,12 @@ class HomeScene: SKScene {
             if node == buttonStart {
                 // direct to scene game
                 print("Start Button Touched -> to Game Scene")
+                
+                // play button start audio when clicked
+                buttonStartAudio.play()
+                
+                // stop home backsong audio
+                //removeHomesceneBacksongAudio()
             }
         }
     }
