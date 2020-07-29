@@ -30,14 +30,18 @@ class LoadingPage: UIViewController {
     
     func randomContent(){
         let imageName = [#imageLiteral(resourceName: "snake"), #imageLiteral(resourceName: "snake"), #imageLiteral(resourceName: "snake")]
+<<<<<<< HEAD
         var randomName = imageName.randomElement()
+=======
+        let randomName = imageName.randomElement()
+>>>>>>> develop
         loadingImage.image = randomName
         
-        if loadingImage.image == #imageLiteral(resourceName: "snake"){
+        if loadingImage.image == #imageLiteral(resourceName: "snake") {
             descriptionLoading.text = "test test test"
-            
         }
         
+<<<<<<< HEAD
         else if loadingImage.image == #imageLiteral(resourceName: "snake") {
             descriptionLoading.text = "test test test"
         }
@@ -45,6 +49,15 @@ class LoadingPage: UIViewController {
         else if loadingImage.image == #imageLiteral(resourceName: "snake") {
             descriptionLoading.text = "test test test"
         }
+=======
+//        else if loadingImage.image == #imageLiteral(resourceName: <#T##String#>) {
+//            descriptionLoading.text = "test test test"
+//        }
+//
+//        else if loadingImage.image == #imageLiteral(resourceName: <#T##String#>) {
+//            descriptionLoading.text = "test test test"
+//        }
+>>>>>>> develop
     }
     
     
