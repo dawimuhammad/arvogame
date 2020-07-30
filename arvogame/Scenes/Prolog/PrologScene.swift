@@ -73,6 +73,7 @@ class PrologScene: SKScene {
         dialogBox.addChild(buttonNextProlog)
         
         self.addChild(dialogBox)
+        
     }
     
     func constructPrologMessage() {

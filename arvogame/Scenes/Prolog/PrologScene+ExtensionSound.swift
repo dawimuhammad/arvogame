@@ -11,7 +11,7 @@ import AVFoundation
 
 extension PrologScene {
     func setupPrologBacksongAudio() {
-        let sound = Bundle.main.path(forResource: "//BGM-Intro", ofType: "mp3")
+        let sound = Bundle.main.path(forResource: "//BGM_Intro", ofType: "mp3")
         
         do {
             prologBacksongAudio = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
