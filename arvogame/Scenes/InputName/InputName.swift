@@ -11,25 +11,23 @@ import SpriteKit
 import AVFoundation
 
 class InputName: SKScene {
-    
     var pageTitle : SKLabelNode!
     var buttonLanjut : SKSpriteNode!
     var textField : TextField!
     var backgroundScene : SKSpriteNode!
+    var buttonStartAudio = AVAudioPlayer()
     
     override func didMove(to view: SKView) {
-        
         buildTextField()
         buildPageTitle()
         buildBackgroundScene()
+        setupButtonStartAudio()
         
         buttonLanjut = (childNode(withName: "buttonLanjut") as! SKSpriteNode)
         buttonLanjut.zPosition = 2
-        
     }
     
-    func buildPageTitle(){
-        
+    func buildPageTitle() {
         pageTitle = SKLabelNode(fontNamed: "PressStart2P")
         pageTitle?.text = "NAMA KAMU"
         pageTitle?.position = CGPoint(x: 0, y: 250)
@@ -40,8 +38,7 @@ class InputName: SKScene {
         self.addChild(pageTitle!)
     }
     
-    func buildBackgroundScene(){
-        
+    func buildBackgroundScene() {
         backgroundScene = SKSpriteNode(imageNamed: "name-input-bg")
         backgroundScene.position = CGPoint(x: 0, y: 0)
         backgroundScene.zPosition = 0
@@ -51,37 +48,44 @@ class InputName: SKScene {
     }
     
     
-    func buildTextField(){
-        
+    func buildTextField() {
         let textFieldFrame = CGRect(x: 300, y: 180, width: 300, height: 70)
         textField = TextField(frame: textFieldFrame)
         textField.textAlignment = .center
         textField.background = #imageLiteral(resourceName: "box-name")
+        textField.textColor = .black
         textField.placeholder = "Masukan Nama Kamu.."
         textField.font = UIFont(name: "PressStart2P", size: 12)
         
         self.view?.addSubview(textField)
-        
     }
     
     
-    func presentNextScene(){
-        
+    func presentNextScene() {
         if let scene = SKScene (fileNamed: "ChooseCharacter") {
             scene.scaleMode = .aspectFill
-            view?.presentScene(scene)
+            
+            let presentScene = SKAction.run {
+                self.view?.presentScene(scene)
+            }
+            
+            let presentSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentScene])
+            
+            run(presentSequence)
         }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         guard let touch  = touches.first else { return }
         
         if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
             if node == buttonLanjut {
+                buttonStartAudio.play()
                 UserDefaults.standard.set(textField.text, forKey: "characterName")
                 self.textField.removeFromSuperview()
                 presentNextScene()
+            } else {
+                self.view?.endEditing(true)
             }
         }
     }
