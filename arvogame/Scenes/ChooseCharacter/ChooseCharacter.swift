@@ -118,10 +118,14 @@ class ChooseCharacter: SKScene {
             } else if node == manCharacter{
                 
                 UserDefaults.standard.set(true, forKey: "man")
+                manCharacter.alpha = 0.5
+                womanCharacter.alpha = 1
                 
             } else if node == womanCharacter{
                 
                 UserDefaults.standard.set(true, forKey: "woman")
+                manCharacter.alpha = 1
+                womanCharacter.alpha = 0.5
             }
         }
     }

@@ -128,7 +128,7 @@ class PrologScene: SKScene {
     }
     
     func presentHomeScene() {
-        if let scene = SKScene(fileNamed: "HomeScene") {
+        if let scene = SKScene(fileNamed: "InputName") {
             scene.scaleMode = .aspectFill
             view?.presentScene(scene)
         }
