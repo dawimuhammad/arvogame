@@ -67,7 +67,7 @@ class InputName: SKScene {
     
     func presentNextScene(){
         
-        if let scene = SKScene (fileNamed: "HomeScene") {
+        if let scene = SKScene (fileNamed: "ChooseCharacter") {
             scene.scaleMode = .aspectFill
             view?.presentScene(scene)
         }
