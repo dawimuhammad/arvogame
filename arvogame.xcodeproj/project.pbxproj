@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4526E7E824CEC62500C38745 /* StageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4526E7E724CEC62500C38745 /* StageOne.sks */; };
 		4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4526E7E924CEC66300C38745 /* StageOne.swift */; };
+		455EF63C24D9435E00DC53CC /* FinishStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455EF63B24D9435E00DC53CC /* FinishStageOne.swift */; };
+		45AEF78224D939FC0029837E /* GameOverStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AEF78124D939FC0029837E /* GameOverStageOne.swift */; };
 		45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 45B9D56C24D15ADB000C595A /* MyTileSet.sks */; };
 		B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B76CED5E24C98FC600E16060 /* HomeScene.sks */; };
 		B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76CED6024C98FD400E16060 /* HomeScene.swift */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		4526E7E724CEC62500C38745 /* StageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageOne.sks; sourceTree = "<group>"; };
 		4526E7E924CEC66300C38745 /* StageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageOne.swift; sourceTree = "<group>"; };
+		455EF63B24D9435E00DC53CC /* FinishStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishStageOne.swift; sourceTree = "<group>"; };
+		45AEF78124D939FC0029837E /* GameOverStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverStageOne.swift; sourceTree = "<group>"; };
 		45B9D56C24D15ADB000C595A /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
 		B76CED5E24C98FC600E16060 /* HomeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HomeScene.sks; sourceTree = "<group>"; };
 		B76CED6024C98FD400E16060 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 			children = (
 				4526E7E924CEC66300C38745 /* StageOne.swift */,
 				4526E7E724CEC62500C38745 /* StageOne.sks */,
+				45AEF78124D939FC0029837E /* GameOverStageOne.swift */,
+				455EF63B24D9435E00DC53CC /* FinishStageOne.swift */,
 			);
 			path = Stage;
 			sourceTree = "<group>";
@@ -206,8 +212,10 @@
 				B7C39C1824C1922300214EA4 /* GameScene.swift in Sources */,
 				B7DE4E3524C83B7700FB36CB /* PrologScene.swift in Sources */,
 				B7C39C1A24C1922300214EA4 /* GameViewController.swift in Sources */,
+				45AEF78224D939FC0029837E /* GameOverStageOne.swift in Sources */,
 				4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */,
 				B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */,
+				455EF63C24D9435E00DC53CC /* FinishStageOne.swift in Sources */,
 				B7C39C1224C1922300214EA4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
