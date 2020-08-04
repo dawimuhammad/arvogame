@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4526E7E824CEC62500C38745 /* StageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4526E7E724CEC62500C38745 /* StageOne.sks */; };
+		4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4526E7E924CEC66300C38745 /* StageOne.swift */; };
+		455EF63C24D9435E00DC53CC /* FinishStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455EF63B24D9435E00DC53CC /* FinishStageOne.swift */; };
+		45AEF78224D939FC0029837E /* GameOverStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AEF78124D939FC0029837E /* GameOverStageOne.swift */; };
+		45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 45B9D56C24D15ADB000C595A /* MyTileSet.sks */; };
 		3F3D9EDA24D13E5D00D0006C /* InputName.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D9ED924D13E5C00D0006C /* InputName.sks */; };
 		3F3D9EDC24D13E8300D0006C /* InputName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EDB24D13E8300D0006C /* InputName.swift */; };
 		3F3D9EDE24D1612000D0006C /* InputNameCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EDD24D1612000D0006C /* InputNameCustomClass.swift */; };
@@ -36,6 +41,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4526E7E724CEC62500C38745 /* StageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageOne.sks; sourceTree = "<group>"; };
+		4526E7E924CEC66300C38745 /* StageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageOne.swift; sourceTree = "<group>"; };
+		455EF63B24D9435E00DC53CC /* FinishStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishStageOne.swift; sourceTree = "<group>"; };
+		45AEF78124D939FC0029837E /* GameOverStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverStageOne.swift; sourceTree = "<group>"; };
+		45B9D56C24D15ADB000C595A /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
 		3F3D9ED924D13E5C00D0006C /* InputName.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InputName.sks; sourceTree = "<group>"; };
 		3F3D9EDB24D13E8300D0006C /* InputName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputName.swift; sourceTree = "<group>"; };
 		3F3D9EDD24D1612000D0006C /* InputNameCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameCustomClass.swift; sourceTree = "<group>"; };
@@ -77,6 +87,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4526E7EB24CEC68800C38745 /* Stage */ = {
+			isa = PBXGroup;
+			children = (
+				4526E7E924CEC66300C38745 /* StageOne.swift */,
+				4526E7E724CEC62500C38745 /* StageOne.sks */,
+				45AEF78124D939FC0029837E /* GameOverStageOne.swift */,
+				455EF63B24D9435E00DC53CC /* FinishStageOne.swift */,
+			);
+			path = Stage;
+			sourceTree = "<group>";
+		};
 		3F3D9ED824D13DF500D0006C /* InputName */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +209,7 @@
 				B7C39C1E24C1922400214EA4 /* Assets.xcassets */,
 				B7C39C2024C1922400214EA4 /* LaunchScreen.storyboard */,
 				B7C39C2324C1922400214EA4 /* Info.plist */,
+				45B9D56C24D15ADB000C595A /* MyTileSet.sks */,
 			);
 			path = arvogame;
 			sourceTree = "<group>";
@@ -198,6 +220,7 @@
 				B7A1C22024CEDAC5002B77D5 /* Extensions */,
 				B76CED5D24C98FA200E16060 /* Home */,
 				B7DE4E3124C83B1200FB36CB /* Prolog */,
+				4526E7EB24CEC68800C38745 /* Stage */,
 				3F3D9ED824D13DF500D0006C /* InputName */,
 				3F3D9EE624D1C74600D0006C /* Loading */,
 				3F3D9EEB24D2882F00D0006C /* ChooseCharacter */,
@@ -275,6 +298,7 @@
 			files = (
 				3F3D9EED24D2885100D0006C /* ChooseCharacter.sks in Resources */,
 				B7C39C1D24C1922300214EA4 /* Main.storyboard in Resources */,
+				4526E7E824CEC62500C38745 /* StageOne.sks in Resources */,
 				B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */,
 				3F3D9EE824D1C76B00D0006C /* Loading.sks in Resources */,
 				3F3D9EE024D16D8C00D0006C /* BGM_Intro.mp3 in Resources */,
@@ -283,6 +307,7 @@
 				B7C39C1424C1922300214EA4 /* GameScene.sks in Resources */,
 				B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */,
 				B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */,
+				45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */,
 				B7C39C2224C1922400214EA4 /* LaunchScreen.storyboard in Resources */,
 				B7C39C1624C1922300214EA4 /* Actions.sks in Resources */,
 				B727D9FE24CAD842008A9834 /* 8-BIT-WONDER.TTF in Resources */,
@@ -303,6 +328,10 @@
 				3F3D9EEA24D1C7A300D0006C /* Loading.swift in Sources */,
 				B75E965324D02FDC00F3A29D /* HomeScene+ExtensionSound.swift in Sources */,
 				B7C39C1A24C1922300214EA4 /* GameViewController.swift in Sources */,
+				45AEF78224D939FC0029837E /* GameOverStageOne.swift in Sources */,
+				4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */,
+				B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */,
+				455EF63C24D9435E00DC53CC /* FinishStageOne.swift in Sources */,
 				3F3D9EDC24D13E8300D0006C /* InputName.swift in Sources */,
 				B7A1C21F24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift in Sources */,
 				3F3D9EDE24D1612000D0006C /* InputNameCustomClass.swift in Sources */,
@@ -453,7 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W5ZPF478J8;
+				DEVELOPMENT_TEAM = 9WD83SC374;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -471,7 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W5ZPF478J8;
+				DEVELOPMENT_TEAM = 9WD83SC374;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
