@@ -62,7 +62,7 @@ class Loading: SKScene {
             informationText.zPosition = 10
             informationText.position = CGPoint(x: informationPicture.position.x+50, y: informationPicture.position.y)
             informationText.horizontalAlignmentMode = .left
-           
+        
             
             self.addChild(informationText)
 
