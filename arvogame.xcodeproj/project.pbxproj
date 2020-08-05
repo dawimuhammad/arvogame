@@ -36,6 +36,12 @@
 		B7C39C1D24C1922300214EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C1B24C1922300214EA4 /* Main.storyboard */; };
 		B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C1E24C1922400214EA4 /* Assets.xcassets */; };
 		B7C39C2224C1922400214EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C2024C1922400214EA4 /* LaunchScreen.storyboard */; };
+		B7DC99AD24DA98D600753B48 /* StageOne+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC99AC24DA98D600753B48 /* StageOne+ExtensionSound.swift */; };
+		B7DC99AF24DA9A0600753B48 /* BGM-Stage-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99AE24DA9A0600753B48 /* BGM-Stage-1.wav */; };
+		B7DC99B424DA9D6000753B48 /* SFX-collect-item.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99B024DA9D6000753B48 /* SFX-collect-item.wav */; };
+		B7DC99B524DA9D6000753B48 /* SFX-char-jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99B124DA9D6000753B48 /* SFX-char-jump.wav */; };
+		B7DC99B624DA9D6000753B48 /* SFX-char-damage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99B224DA9D6000753B48 /* SFX-char-damage.mp3 */; };
+		B7DC99B724DA9D6000753B48 /* SFX-footstep.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99B324DA9D6000753B48 /* SFX-footstep.wav */; };
 		B7DE4E3324C83B5400FB36CB /* PrologScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B7DE4E3224C83B5400FB36CB /* PrologScene.sks */; };
 		B7DE4E3524C83B7700FB36CB /* PrologScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE4E3424C83B7700FB36CB /* PrologScene.swift */; };
 		B7F6D41D24D9BD7900E3386A /* InputName+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F6D41C24D9BD7900E3386A /* InputName+ExtensionSound.swift */; };
@@ -73,6 +79,12 @@
 		B7C39C1E24C1922400214EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C39C2124C1922400214EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7C39C2324C1922400214EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7DC99AC24DA98D600753B48 /* StageOne+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StageOne+ExtensionSound.swift"; sourceTree = "<group>"; };
+		B7DC99AE24DA9A0600753B48 /* BGM-Stage-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "BGM-Stage-1.wav"; sourceTree = "<group>"; };
+		B7DC99B024DA9D6000753B48 /* SFX-collect-item.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SFX-collect-item.wav"; sourceTree = "<group>"; };
+		B7DC99B124DA9D6000753B48 /* SFX-char-jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SFX-char-jump.wav"; sourceTree = "<group>"; };
+		B7DC99B224DA9D6000753B48 /* SFX-char-damage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SFX-char-damage.mp3"; sourceTree = "<group>"; };
+		B7DC99B324DA9D6000753B48 /* SFX-footstep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SFX-footstep.wav"; sourceTree = "<group>"; };
 		B7DE4E3224C83B5400FB36CB /* PrologScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PrologScene.sks; sourceTree = "<group>"; };
 		B7DE4E3424C83B7700FB36CB /* PrologScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologScene.swift; sourceTree = "<group>"; };
 		B7F6D41C24D9BD7900E3386A /* InputName+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputName+ExtensionSound.swift"; sourceTree = "<group>"; };
@@ -125,6 +137,7 @@
 				4526E7E724CEC62500C38745 /* StageOne.sks */,
 				45AEF78124D939FC0029837E /* GameOverStageOne.swift */,
 				455EF63B24D9435E00DC53CC /* FinishStageOne.swift */,
+				B7DC99AC24DA98D600753B48 /* StageOne+ExtensionSound.swift */,
 			);
 			path = Stage;
 			sourceTree = "<group>";
@@ -141,6 +154,10 @@
 		B75E965624D0339000F3A29D /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				B7DC99B224DA9D6000753B48 /* SFX-char-damage.mp3 */,
+				B7DC99B124DA9D6000753B48 /* SFX-char-jump.wav */,
+				B7DC99B024DA9D6000753B48 /* SFX-collect-item.wav */,
+				B7DC99B324DA9D6000753B48 /* SFX-footstep.wav */,
 				B75E965724D0344200F3A29D /* button_click.wav */,
 			);
 			path = Effects;
@@ -168,6 +185,7 @@
 		B7A1C20524CED90C002B77D5 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				B7DC99AE24DA9A0600753B48 /* BGM-Stage-1.wav */,
 				3F3D9EDF24D16D8C00D0006C /* BGM_Intro.mp3 */,
 				B75E965424D0327D00F3A29D /* BGM-Home.wav */,
 			);
@@ -304,14 +322,19 @@
 				4526E7E824CEC62500C38745 /* StageOne.sks in Resources */,
 				B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */,
 				3F3D9EE824D1C76B00D0006C /* Loading.sks in Resources */,
+				B7DC99B624DA9D6000753B48 /* SFX-char-damage.mp3 in Resources */,
 				3F3D9EE024D16D8C00D0006C /* BGM_Intro.mp3 in Resources */,
+				B7DC99B524DA9D6000753B48 /* SFX-char-jump.wav in Resources */,
 				B7DE4E3324C83B5400FB36CB /* PrologScene.sks in Resources */,
 				B75E965524D0327D00F3A29D /* BGM-Home.wav in Resources */,
+				B7DC99AF24DA9A0600753B48 /* BGM-Stage-1.wav in Resources */,
 				B7C39C1424C1922300214EA4 /* GameScene.sks in Resources */,
+				B7DC99B724DA9D6000753B48 /* SFX-footstep.wav in Resources */,
 				B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */,
 				B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */,
 				45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */,
 				B7C39C2224C1922400214EA4 /* LaunchScreen.storyboard in Resources */,
+				B7DC99B424DA9D6000753B48 /* SFX-collect-item.wav in Resources */,
 				B7C39C1624C1922300214EA4 /* Actions.sks in Resources */,
 				B727D9FE24CAD842008A9834 /* 8-BIT-WONDER.TTF in Resources */,
 				B75E965824D0344200F3A29D /* button_click.wav in Resources */,
@@ -339,6 +362,7 @@
 				B7A1C21F24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift in Sources */,
 				B7F6D41D24D9BD7900E3386A /* InputName+ExtensionSound.swift in Sources */,
 				3F3D9EDE24D1612000D0006C /* InputNameCustomClass.swift in Sources */,
+				B7DC99AD24DA98D600753B48 /* StageOne+ExtensionSound.swift in Sources */,
 				B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */,
 				3F3D9EEF24D2886E00D0006C /* ChooseCharacter.swift in Sources */,
 				B7C39C1224C1922300214EA4 /* AppDelegate.swift in Sources */,

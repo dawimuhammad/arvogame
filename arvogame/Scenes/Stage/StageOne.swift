@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 struct PhysicCategory {
     static let player: UInt32 = 0b1  //1
@@ -35,15 +36,23 @@ class StageOne: SKScene {
     var jumpingAction: SKAction!
     var tuasAction: SKAction!
     
+    var stageOneBacksongAudio = AVAudioPlayer()
+    var runAudio = AVAudioPlayer()
+    var jumpAudio = AVAudioPlayer()
+    var charDamageAudio = AVAudioPlayer()
+    
     var lives = 1
        var isAlive: Bool {
            return lives > 0
        }
     
     override func didMove(to view: SKView) {
-        
         setupRunningAction()
         setupJumpingAction()
+        setupStageOneBacksongAudio()
+        setupRunningAudio()
+        setupJumpAudio()
+        setupCharDamageAudio()
         //givePhysicMap()
         
         player = (childNode(withName: "player") as! SKSpriteNode)
@@ -52,28 +61,12 @@ class StageOne: SKScene {
         jumpButton = (childNode(withName: "//jumpButton") as! SKSpriteNode)
         cameraNode = (childNode(withName: "camera") as! SKCameraNode)
         pintu = (childNode(withName: "pintu") as! SKSpriteNode)
-        
-        
        
         physicsWorld.contactDelegate = self
-        
-//        for node in self.children{
-//            if (node.name == "mapStageOne"){
-//                if let someTilemap: SKTileMapNode = node as? SKTileMapNode{
-//                    giveTileMapNodePhysic(map: someTilemap)
-//                    someTilemap.removeFromParent()
-//                }
-//                break
-//            }
-//        }
-        
-        
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
-        
         
         if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
             
@@ -83,7 +76,7 @@ class StageOne: SKScene {
                 //                      dino.removeAction(forKey: "idleAnimation")
                 player.run(runningAction, withKey: "runningAnimation")
                 playerDirection = -1
-                
+                runAudio.play()
             } else if node == rightButton {
                 player.xScale = 1
                 player.yScale = 1
@@ -91,6 +84,7 @@ class StageOne: SKScene {
                 //                      dino.removeAction(forKey: "idleAnimation")
                 player.run(runningAction, withKey: "runningAnimation")
                 playerDirection = 1
+                runAudio.play()
             } else if node == jumpButton{
                 
                 //player.removeAction(forKey: "runningAnimation")
@@ -105,6 +99,7 @@ class StageOne: SKScene {
                 // make player run sequence
                 player.run(jumpSequence)
                 player.run(jumpingAction, withKey: "jumpingAnimation")
+                jumpAudio.play()
             }
         }
     }
@@ -130,27 +125,25 @@ class StageOne: SKScene {
     }
     
     func setupRunningAction() {
-           var textures = [SKTexture]()
-           for i in 1...9 {
-               textures.append(SKTexture(imageNamed: "run-\(i)"))
-           }
-           runningAction = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.1))
-        
-        
-       }
+        var textures = [SKTexture]()
+        for i in 1...9 {
+           textures.append(SKTexture(imageNamed: "run-\(i)"))
+        }
+
+        runningAction = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.1))
+   }
     
     func setupJumpingAction() {
-              var textures = [SKTexture]()
-              for i in 1...5 {
-                  textures.append(SKTexture(imageNamed: "jump-\(i)"))
-              }
-      //  jumpingAction = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.1))
+        var textures = [SKTexture]()
+        for i in 1...5 {
+          textures.append(SKTexture(imageNamed: "jump-\(i)"))
+        }
+        //jumpingAction = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.1))
         
         jumpingAction = SKAction.repeat(SKAction.animate(with: textures, timePerFrame: 0.1), count: 1)
-           
-          }
+    }
     
-    func setupDyingPLayer(){
+    func setupDyingPLayer() {
         player.removeAllActions()
         
         let gameOver = GameOverStageOne(size: view!.frame.size)
@@ -168,7 +161,7 @@ class StageOne: SKScene {
         
     }
     
-    func setupFinishPLayer(){
+    func setupFinishPLayer() {
          player.removeAllActions()
          
          let finishStage = FinishStageOne(size: view!.frame.size)
@@ -186,7 +179,7 @@ class StageOne: SKScene {
          
      }
     
-    func setupTuas(asset: SKSpriteNode){
+    func setupTuas(asset: SKSpriteNode) {
         var textures = [SKTexture]()
               for i in 1...2 {
                   textures.append(SKTexture(imageNamed: "Tuas(\(i))"))
@@ -195,90 +188,9 @@ class StageOne: SKScene {
         
         asset.run(tuasAction,withKey: "changeTuas")
     }
-    
-    
-    //Rectangle
-//    func givePhysicMap(){
-//
-//        guard let tilemap = childNode(withName: "mapStageOne") as? SKTileMapNode else { return }
-//        let tileSize = tilemap.tileSize
-//                let halfWidth = CGFloat(tilemap.numberOfColumns) / 2.0 * tileSize.width
-//                let halfHeight = CGFloat(tilemap.numberOfRows) / 2.0 * tileSize.height
-//                for row in 0..<tilemap.numberOfRows {
-//                    for col in 0..<tilemap.numberOfColumns {
-//
-//                        if let tileDefinition = tilemap.tileDefinition(atColumn: col, row: row) {
-//
-//                            let tileArray = tileDefinition.textures
-//                            let tileTexture = tileArray[0]
-//                            let x = CGFloat(col) * tileSize.width - halfWidth
-//                            let y = CGFloat(row) * tileSize.height - halfHeight
-//                            let rect = CGRect(x: 0, y: 0, width: tileSize.width, height: tileSize.height)
-//                            let tileNode = SKShapeNode(rect: rect)
-//                            tileNode.position = CGPoint(x: x, y: y)
-//                            tileNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 5), center: CGPoint(x: tileSize.width / 2.0, y: 0))
-//                            tileNode.physicsBody?.linearDamping = 60.0
-//                            tileNode.physicsBody?.affectedByGravity = false
-//                            tileNode.physicsBody?.allowsRotation = false
-//                            tileNode.physicsBody?.restitution = 0.0
-//                            tileNode.physicsBody?.isDynamic = false
-//                            tileNode.physicsBody?.collisionBitMask = 2
-//                            tileNode.physicsBody?.categoryBitMask = 1
-//                            tileNode.physicsBody?.contactTestBitMask = 2 | 1
-//                            tileNode.name = "Ground"
-//                            tilemap.addChild(tileNode)
-//                        }
-//                    }
-//                }
-//
-//        }
-    
-    //TEXTURE
-//    func giveTileMapNodePhysic(map: SKTileMapNode){
-//        let tileMap = map
-//
-//        let startingLocation: CGPoint = tileMap.position
-//
-//        let tileSize = tileMap.tileSize
-//
-//        let halfWidth = CGFloat(tileMap.numberOfColumns) / 2.0 * tileSize.width
-//        let halfHeight = CGFloat(tileMap.numberOfRows) / 2.0 * tileSize.height
-//
-//        for col in 0..<tileMap.numberOfColumns{
-//            for row in 0..<tileMap.numberOfRows{
-//
-//                if let tileDefiniton = tileMap.tileDefinition(atColumn: col, row: row){
-//
-//                    let tileArray = tileDefiniton.textures
-//                    let tileTexture = tileArray.count
-//
-//                    let x = CGFloat(col) * tileSize.width - halfWidth + (tileSize.width / 2)
-//                    let y = CGFloat(row) * tileSize.height - halfHeight + (tileSize.height / 2)
-//
-//                    let tileNode = SKNode()
-//                    tileNode.position = CGPoint(x: x, y: y)
-//                    tileNode.physicsBody = SKPhysicsBody(texture: tileTexture, size: CGSize(width: (tileTexture.size().width), height: (tileTexture.size().height)))
-//                    tileNode.physicsBody?.linearDamping = 60
-//                    tileNode.physicsBody?.affectedByGravity = false
-//                    tileNode.physicsBody?.allowsRotation = false
-//                    tileNode.physicsBody?.isDynamic = false
-//                    tileNode.physicsBody?.friction = 1
-//
-//                    self.addChild(tileNode)
-//
-//                    tileNode.position = CGPoint(x: tileNode.position.x + startingLocation.x, y: tileNode.position.y + startingLocation.y)
-//                }
-//            }
-//        }
-//    }
-    
-    
-
-    }
-    
+}
 
 extension StageOne: SKPhysicsContactDelegate {
-    
     func didBegin(_ contact: SKPhysicsContact) {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         //contact 1 buat jump
@@ -292,21 +204,14 @@ extension StageOne: SKPhysicsContactDelegate {
            // make player run sequence
            player.run(jumpSequence)
            player.run(jumpingAction, withKey: "jumpingAnimation")
-        }else if contactMask == PhysicCategory.player | PhysicCategory.tuas{
+        } else if contactMask == PhysicCategory.player | PhysicCategory.tuas{
             let tuas = (contact.bodyB.node?.name == "tuas" ? contact.bodyB.node : contact.bodyA.node) as! SKSpriteNode
             setupTuas(asset: tuas)
             self.removeChildren(in: [pintu])
+                      
+        } else if contactMask == PhysicCategory.player | PhysicCategory.fire {
+            charDamageAudio.play()
             
-//             var node: SKNode? = nil
-//            if contact.bodyA.node?.name == "player" {
-//                node?.name = "pintu"
-//                    }
-//            else {
-//                node?.name = "pintu"
-//                    }
-//            node?.run(SKAction.removeFromParent())
-            
-        } else if contactMask == PhysicCategory.player | PhysicCategory.fire{
             if !isAlive {
                     return
                 }
@@ -324,18 +229,10 @@ extension StageOne: SKPhysicsContactDelegate {
 //                    node = contact.bodyB.node
 //                }
 //                node?.run(SKAction.removeFromParent())
-            }else if contactMask == PhysicCategory.player | PhysicCategory.finish{
-            
-           setupFinishPLayer()
-        }
-          
-            
-        }
-    
-    func didEnd(_ contact: SKPhysicsContact) {
-        
+            } else if contactMask == PhysicCategory.player | PhysicCategory.finish {
+               setupFinishPLayer()
+            }
     }
-    
 }
 
 
