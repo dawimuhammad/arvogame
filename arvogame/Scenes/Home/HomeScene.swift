@@ -47,19 +47,27 @@ class HomeScene: SKScene {
         self.addChild(logoImage)
     }
     
+    func presentNextScene() {
+        if let scene = SKScene (fileNamed: "StageOne") {
+            scene.scaleMode = .aspectFill
+            
+            let presentScene = SKAction.run {
+                self.view?.presentScene(scene)
+            }
+            
+            let presentSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentScene])
+            
+            run(presentSequence)
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         
         if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
             if node == buttonStart {
-                // direct to scene game
-                print("Start Button Touched -> to Game Scene")
-                
-                // play button start audio when clicked
                 buttonStartAudio.play()
-                
-                // stop home backsong audio
-                //removeHomesceneBacksongAudio()
+                presentNextScene()
             }
         }
     }
