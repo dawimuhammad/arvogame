@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4526E7E824CEC62500C38745 /* StageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4526E7E724CEC62500C38745 /* StageOne.sks */; };
-		4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4526E7E924CEC66300C38745 /* StageOne.swift */; };
-		455EF63C24D9435E00DC53CC /* FinishStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455EF63B24D9435E00DC53CC /* FinishStageOne.swift */; };
-		45AEF78224D939FC0029837E /* GameOverStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AEF78124D939FC0029837E /* GameOverStageOne.swift */; };
-		45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 45B9D56C24D15ADB000C595A /* MyTileSet.sks */; };
 		3F3D9EDA24D13E5D00D0006C /* InputName.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D9ED924D13E5C00D0006C /* InputName.sks */; };
 		3F3D9EDC24D13E8300D0006C /* InputName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EDB24D13E8300D0006C /* InputName.swift */; };
 		3F3D9EDE24D1612000D0006C /* InputNameCustomClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EDD24D1612000D0006C /* InputNameCustomClass.swift */; };
@@ -20,6 +15,11 @@
 		3F3D9EEA24D1C7A300D0006C /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EE924D1C7A300D0006C /* Loading.swift */; };
 		3F3D9EED24D2885100D0006C /* ChooseCharacter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D9EEC24D2885100D0006C /* ChooseCharacter.sks */; };
 		3F3D9EEF24D2886E00D0006C /* ChooseCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EEE24D2886E00D0006C /* ChooseCharacter.swift */; };
+		4526E7E824CEC62500C38745 /* StageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4526E7E724CEC62500C38745 /* StageOne.sks */; };
+		4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4526E7E924CEC66300C38745 /* StageOne.swift */; };
+		455EF63C24D9435E00DC53CC /* FinishStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455EF63B24D9435E00DC53CC /* FinishStageOne.swift */; };
+		45AEF78224D939FC0029837E /* GameOverStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AEF78124D939FC0029837E /* GameOverStageOne.swift */; };
+		45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 45B9D56C24D15ADB000C595A /* MyTileSet.sks */; };
 		B727D9FE24CAD842008A9834 /* 8-BIT-WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B727D9FC24CAD842008A9834 /* 8-BIT-WONDER.TTF */; };
 		B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B727D9FD24CAD842008A9834 /* PRESSSTART2P.TTF */; };
 		B75E965324D02FDC00F3A29D /* HomeScene+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75E965224D02FDC00F3A29D /* HomeScene+ExtensionSound.swift */; };
@@ -36,16 +36,19 @@
 		B7C39C1D24C1922300214EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C1B24C1922300214EA4 /* Main.storyboard */; };
 		B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C1E24C1922400214EA4 /* Assets.xcassets */; };
 		B7C39C2224C1922400214EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C39C2024C1922400214EA4 /* LaunchScreen.storyboard */; };
+		B7DC99AD24DA98D600753B48 /* StageOne+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC99AC24DA98D600753B48 /* StageOne+ExtensionSound.swift */; };
+		B7DC99AF24DA9A0600753B48 /* BGM-Stage-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99AE24DA9A0600753B48 /* BGM-Stage-1.wav */; };
+		B7DC99B424DA9D6000753B48 /* SFX-collect-item.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99B024DA9D6000753B48 /* SFX-collect-item.wav */; };
+		B7DC99B524DA9D6000753B48 /* SFX-char-jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99B124DA9D6000753B48 /* SFX-char-jump.wav */; };
+		B7DC99B624DA9D6000753B48 /* SFX-char-damage.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99B224DA9D6000753B48 /* SFX-char-damage.mp3 */; };
+		B7DC99B724DA9D6000753B48 /* SFX-footstep.wav in Resources */ = {isa = PBXBuildFile; fileRef = B7DC99B324DA9D6000753B48 /* SFX-footstep.wav */; };
+		B7DC99B924DAA82700753B48 /* ChooseCharacter+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DC99B824DAA82700753B48 /* ChooseCharacter+ExtensionSound.swift */; };
 		B7DE4E3324C83B5400FB36CB /* PrologScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B7DE4E3224C83B5400FB36CB /* PrologScene.sks */; };
 		B7DE4E3524C83B7700FB36CB /* PrologScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7DE4E3424C83B7700FB36CB /* PrologScene.swift */; };
+		B7F6D41D24D9BD7900E3386A /* InputName+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F6D41C24D9BD7900E3386A /* InputName+ExtensionSound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4526E7E724CEC62500C38745 /* StageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageOne.sks; sourceTree = "<group>"; };
-		4526E7E924CEC66300C38745 /* StageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageOne.swift; sourceTree = "<group>"; };
-		455EF63B24D9435E00DC53CC /* FinishStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishStageOne.swift; sourceTree = "<group>"; };
-		45AEF78124D939FC0029837E /* GameOverStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverStageOne.swift; sourceTree = "<group>"; };
-		45B9D56C24D15ADB000C595A /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
 		3F3D9ED924D13E5C00D0006C /* InputName.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InputName.sks; sourceTree = "<group>"; };
 		3F3D9EDB24D13E8300D0006C /* InputName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputName.swift; sourceTree = "<group>"; };
 		3F3D9EDD24D1612000D0006C /* InputNameCustomClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNameCustomClass.swift; sourceTree = "<group>"; };
@@ -54,6 +57,11 @@
 		3F3D9EE924D1C7A300D0006C /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		3F3D9EEC24D2885100D0006C /* ChooseCharacter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ChooseCharacter.sks; sourceTree = "<group>"; };
 		3F3D9EEE24D2886E00D0006C /* ChooseCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCharacter.swift; sourceTree = "<group>"; };
+		4526E7E724CEC62500C38745 /* StageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageOne.sks; sourceTree = "<group>"; };
+		4526E7E924CEC66300C38745 /* StageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageOne.swift; sourceTree = "<group>"; };
+		455EF63B24D9435E00DC53CC /* FinishStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishStageOne.swift; sourceTree = "<group>"; };
+		45AEF78124D939FC0029837E /* GameOverStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverStageOne.swift; sourceTree = "<group>"; };
+		45B9D56C24D15ADB000C595A /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
 		B727D9FC24CAD842008A9834 /* 8-BIT-WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-BIT-WONDER.TTF"; sourceTree = "<group>"; };
 		B727D9FD24CAD842008A9834 /* PRESSSTART2P.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PRESSSTART2P.TTF; sourceTree = "<group>"; };
 		B75E965224D02FDC00F3A29D /* HomeScene+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeScene+ExtensionSound.swift"; sourceTree = "<group>"; };
@@ -72,8 +80,16 @@
 		B7C39C1E24C1922400214EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7C39C2124C1922400214EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B7C39C2324C1922400214EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7DC99AC24DA98D600753B48 /* StageOne+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StageOne+ExtensionSound.swift"; sourceTree = "<group>"; };
+		B7DC99AE24DA9A0600753B48 /* BGM-Stage-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "BGM-Stage-1.wav"; sourceTree = "<group>"; };
+		B7DC99B024DA9D6000753B48 /* SFX-collect-item.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SFX-collect-item.wav"; sourceTree = "<group>"; };
+		B7DC99B124DA9D6000753B48 /* SFX-char-jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SFX-char-jump.wav"; sourceTree = "<group>"; };
+		B7DC99B224DA9D6000753B48 /* SFX-char-damage.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SFX-char-damage.mp3"; sourceTree = "<group>"; };
+		B7DC99B324DA9D6000753B48 /* SFX-footstep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "SFX-footstep.wav"; sourceTree = "<group>"; };
+		B7DC99B824DAA82700753B48 /* ChooseCharacter+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChooseCharacter+ExtensionSound.swift"; sourceTree = "<group>"; };
 		B7DE4E3224C83B5400FB36CB /* PrologScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PrologScene.sks; sourceTree = "<group>"; };
 		B7DE4E3424C83B7700FB36CB /* PrologScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrologScene.swift; sourceTree = "<group>"; };
+		B7F6D41C24D9BD7900E3386A /* InputName+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InputName+ExtensionSound.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,23 +103,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4526E7EB24CEC68800C38745 /* Stage */ = {
-			isa = PBXGroup;
-			children = (
-				4526E7E924CEC66300C38745 /* StageOne.swift */,
-				4526E7E724CEC62500C38745 /* StageOne.sks */,
-				45AEF78124D939FC0029837E /* GameOverStageOne.swift */,
-				455EF63B24D9435E00DC53CC /* FinishStageOne.swift */,
-			);
-			path = Stage;
-			sourceTree = "<group>";
-		};
 		3F3D9ED824D13DF500D0006C /* InputName */ = {
 			isa = PBXGroup;
 			children = (
 				3F3D9ED924D13E5C00D0006C /* InputName.sks */,
 				3F3D9EDB24D13E8300D0006C /* InputName.swift */,
 				3F3D9EDD24D1612000D0006C /* InputNameCustomClass.swift */,
+				B7F6D41C24D9BD7900E3386A /* InputName+ExtensionSound.swift */,
 			);
 			path = InputName;
 			sourceTree = "<group>";
@@ -122,8 +128,21 @@
 			children = (
 				3F3D9EEC24D2885100D0006C /* ChooseCharacter.sks */,
 				3F3D9EEE24D2886E00D0006C /* ChooseCharacter.swift */,
+				B7DC99B824DAA82700753B48 /* ChooseCharacter+ExtensionSound.swift */,
 			);
 			path = ChooseCharacter;
+			sourceTree = "<group>";
+		};
+		4526E7EB24CEC68800C38745 /* Stage */ = {
+			isa = PBXGroup;
+			children = (
+				4526E7E924CEC66300C38745 /* StageOne.swift */,
+				4526E7E724CEC62500C38745 /* StageOne.sks */,
+				45AEF78124D939FC0029837E /* GameOverStageOne.swift */,
+				455EF63B24D9435E00DC53CC /* FinishStageOne.swift */,
+				B7DC99AC24DA98D600753B48 /* StageOne+ExtensionSound.swift */,
+			);
+			path = Stage;
 			sourceTree = "<group>";
 		};
 		B727D9FB24CAD81E008A9834 /* Fonts */ = {
@@ -138,6 +157,10 @@
 		B75E965624D0339000F3A29D /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				B7DC99B224DA9D6000753B48 /* SFX-char-damage.mp3 */,
+				B7DC99B124DA9D6000753B48 /* SFX-char-jump.wav */,
+				B7DC99B024DA9D6000753B48 /* SFX-collect-item.wav */,
+				B7DC99B324DA9D6000753B48 /* SFX-footstep.wav */,
 				B75E965724D0344200F3A29D /* button_click.wav */,
 			);
 			path = Effects;
@@ -165,6 +188,7 @@
 		B7A1C20524CED90C002B77D5 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				B7DC99AE24DA9A0600753B48 /* BGM-Stage-1.wav */,
 				3F3D9EDF24D16D8C00D0006C /* BGM_Intro.mp3 */,
 				B75E965424D0327D00F3A29D /* BGM-Home.wav */,
 			);
@@ -301,14 +325,19 @@
 				4526E7E824CEC62500C38745 /* StageOne.sks in Resources */,
 				B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */,
 				3F3D9EE824D1C76B00D0006C /* Loading.sks in Resources */,
+				B7DC99B624DA9D6000753B48 /* SFX-char-damage.mp3 in Resources */,
 				3F3D9EE024D16D8C00D0006C /* BGM_Intro.mp3 in Resources */,
+				B7DC99B524DA9D6000753B48 /* SFX-char-jump.wav in Resources */,
 				B7DE4E3324C83B5400FB36CB /* PrologScene.sks in Resources */,
 				B75E965524D0327D00F3A29D /* BGM-Home.wav in Resources */,
+				B7DC99AF24DA9A0600753B48 /* BGM-Stage-1.wav in Resources */,
 				B7C39C1424C1922300214EA4 /* GameScene.sks in Resources */,
+				B7DC99B724DA9D6000753B48 /* SFX-footstep.wav in Resources */,
 				B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */,
 				B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */,
 				45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */,
 				B7C39C2224C1922400214EA4 /* LaunchScreen.storyboard in Resources */,
+				B7DC99B424DA9D6000753B48 /* SFX-collect-item.wav in Resources */,
 				B7C39C1624C1922300214EA4 /* Actions.sks in Resources */,
 				B727D9FE24CAD842008A9834 /* 8-BIT-WONDER.TTF in Resources */,
 				B75E965824D0344200F3A29D /* button_click.wav in Resources */,
@@ -327,6 +356,7 @@
 				B7DE4E3524C83B7700FB36CB /* PrologScene.swift in Sources */,
 				3F3D9EEA24D1C7A300D0006C /* Loading.swift in Sources */,
 				B75E965324D02FDC00F3A29D /* HomeScene+ExtensionSound.swift in Sources */,
+				B7DC99B924DAA82700753B48 /* ChooseCharacter+ExtensionSound.swift in Sources */,
 				B7C39C1A24C1922300214EA4 /* GameViewController.swift in Sources */,
 				45AEF78224D939FC0029837E /* GameOverStageOne.swift in Sources */,
 				4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */,
@@ -334,7 +364,9 @@
 				455EF63C24D9435E00DC53CC /* FinishStageOne.swift in Sources */,
 				3F3D9EDC24D13E8300D0006C /* InputName.swift in Sources */,
 				B7A1C21F24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift in Sources */,
+				B7F6D41D24D9BD7900E3386A /* InputName+ExtensionSound.swift in Sources */,
 				3F3D9EDE24D1612000D0006C /* InputNameCustomClass.swift in Sources */,
+				B7DC99AD24DA98D600753B48 /* StageOne+ExtensionSound.swift in Sources */,
 				B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */,
 				3F3D9EEF24D2886E00D0006C /* ChooseCharacter.swift in Sources */,
 				B7C39C1224C1922300214EA4 /* AppDelegate.swift in Sources */,
@@ -482,7 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9WD83SC374;
+				DEVELOPMENT_TEAM = W5ZPF478J8;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,7 +532,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9WD83SC374;
+				DEVELOPMENT_TEAM = W5ZPF478J8;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

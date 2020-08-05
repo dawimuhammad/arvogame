@@ -138,8 +138,7 @@ class Loading: SKScene {
     }
     
     func presentNextScene(){
-        
-        if let scene = SKScene(fileNamed: "HomeScene"){
+        if let scene = SKScene(fileNamed: "StageOne"){
             scene.scaleMode = .aspectFill
             view?.presentScene(scene)
         }
