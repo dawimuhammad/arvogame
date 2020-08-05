@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class ChooseCharacter: SKScene {
     
@@ -19,12 +20,14 @@ class ChooseCharacter: SKScene {
     var womanLabel : SKLabelNode!
     var manLabel : SKLabelNode!
     
+    var buttonLanjutAudio = AVAudioPlayer()
+    
     override func didMove(to view: SKView) {
-        
         buildCharacter()
         buildLanjutButton()
         buildPageTitle()
         buildBackground()
+        setupButtonLanjutAudio()
     }
     
     func buildCharacter(){
@@ -92,42 +95,38 @@ class ChooseCharacter: SKScene {
         
     }
     
-    func presentNextScene(){
-        
+    func presentNextScene() {
         if let scene = SKScene(fileNamed: "HomeScene") {
-            
             scene.scaleMode = .aspectFill
-            view?.presentScene(scene)
             
+            let presentScene = SKAction.run {
+                self.view?.presentScene(scene)
+            }
+            
+            let presentSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentScene])
+            
+            run(presentSequence)
         }
     }
-    
-
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard let touch = touches.first else { return }
         
         if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode{
+            buttonLanjutAudio.play()
             
-            if node == lanjutButton{
-                
+            if node == lanjutButton {
                 presentNextScene()
-                
-                
-            } else if node == manCharacter{
-                
+            } else if node == manCharacter {
                 UserDefaults.standard.set(true, forKey: "man")
                 manCharacter.alpha = 0.5
                 womanCharacter.alpha = 1
-                
-            } else if node == womanCharacter{
-                
+            } else if node == womanCharacter {
                 UserDefaults.standard.set(true, forKey: "woman")
                 manCharacter.alpha = 1
                 womanCharacter.alpha = 0.5
             }
         }
     }
-    
 }

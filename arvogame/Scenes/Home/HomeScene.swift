@@ -48,7 +48,7 @@ class HomeScene: SKScene {
     }
     
     func presentNextScene() {
-        if let scene = SKScene (fileNamed: "StageOne") {
+        if let scene = SKScene (fileNamed: "Loading") {
             scene.scaleMode = .aspectFill
             
             let presentScene = SKAction.run {
