@@ -23,7 +23,7 @@ class InputName: SKScene {
         buildBackgroundScene()
         setupButtonStartAudio()
         
-        buttonLanjut? = (childNode(withName: "buttonLanjut") as! SKSpriteNode)
+        buttonLanjut = (childNode(withName: "buttonLanjut") as! SKSpriteNode)
     }
     
     func buildPageTitle() {
