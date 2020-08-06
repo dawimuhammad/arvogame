@@ -11,14 +11,6 @@ import SpriteKit
 import GameplayKit
 import AVFoundation
 
-struct PhysicCategory {
-    static let player: UInt32 = 0b1  //1
-    static let tuas: UInt32 = 0b10 //2
-    static let fire: UInt32 = 0b100 //4
-    static let push: UInt32 = 0b1000 //8
-    static let finish: UInt32 = 0b10000 //16
-}
-
 class StageOne: SKScene {
     
     var player: SKSpriteNode!
@@ -27,6 +19,12 @@ class StageOne: SKScene {
     var jumpButton: SKSpriteNode!
     
     var pintu: SKSpriteNode!
+    var photo1: SKSpriteNode!
+    var photo2: SKSpriteNode!
+    var photo3: SKSpriteNode!
+    var photo4: SKSpriteNode!
+    
+    var lblCountCollectibleItem: SKLabelNode!
     
     var cameraNode: SKCameraNode?
     
@@ -43,9 +41,11 @@ class StageOne: SKScene {
     
     
     var lives = 1
-       var isAlive: Bool {
-           return lives > 0
-       }
+        var isAlive: Bool {
+        return lives > 0
+    }
+    
+    var collectibleItem = 0
     
     override func didMove(to view: SKView) {
         setupRunningAction()
@@ -62,7 +62,12 @@ class StageOne: SKScene {
         jumpButton = (childNode(withName: "//jumpButton") as! SKSpriteNode)
         cameraNode = (childNode(withName: "camera") as! SKCameraNode)
         pintu = (childNode(withName: "pintu") as! SKSpriteNode)
-       
+        lblCountCollectibleItem = (childNode(withName: "//labelPhotoCollectCount") as! SKLabelNode)
+        photo1 = (childNode(withName: "photo1") as! SKSpriteNode)
+        photo2 = (childNode(withName: "photo2") as! SKSpriteNode)
+        photo3 = (childNode(withName: "photo3") as! SKSpriteNode)
+        photo4 = (childNode(withName: "photo4") as! SKSpriteNode)
+        
         physicsWorld.contactDelegate = self
     }
     
@@ -74,15 +79,12 @@ class StageOne: SKScene {
             if node == leftButton {
                 player.xScale = -1
                 player.yScale = 1
-                //                      dino.removeAction(forKey: "idleAnimation")
                 player.run(runningAction, withKey: "runningAnimation")
                 playerDirection = -1
                 runAudio.play()
             } else if node == rightButton {
                 player.xScale = 1
                 player.yScale = 1
-
-                //                      dino.removeAction(forKey: "idleAnimation")
                 player.run(runningAction, withKey: "runningAnimation")
                 playerDirection = 1
                 runAudio.play()
@@ -107,22 +109,15 @@ class StageOne: SKScene {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         playerDirection = 0
-        
         player.removeAction(forKey: "runningAnimation")
-        
-        //player.removeAction(forKey: "jumping")
     }
     
     override func update(_ currentTime: TimeInterval) {
-        
         let newPositionX = player.position.x + (playerDirection * 10)
         
         player.position.x = newPositionX
         self.camera?.position.x = newPositionX
         self.camera?.position.y = player.position.y + 200
-//        cameraNode!.position.x = player.position.x/2
-//        cameraNode!.position.y = player.position.y/2
-
     }
     
     func setupRunningAction() {
@@ -139,7 +134,6 @@ class StageOne: SKScene {
         for i in 1...5 {
           textures.append(SKTexture(imageNamed: "jump-\(i)"))
         }
-        //jumpingAction = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.1))
         
         jumpingAction = SKAction.repeat(SKAction.animate(with: textures, timePerFrame: 0.1), count: 1)
     }
@@ -152,7 +146,7 @@ class StageOne: SKScene {
                 self.view?.presentScene(scene)
             }
             
-            let presentSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentScene])
+            let presentSequence = SKAction.sequence([SKAction.wait(forDuration: 0.5), presentScene])
             
             run(presentSequence)
         }
@@ -163,41 +157,13 @@ class StageOne: SKScene {
         
         UserDefaults.standard.set(false, forKey: "gameIsSuccess")
         presentNextScene()
-        
-        /*let gameOver = InputName(size: view!.frame.size)
-        
-        gameOver.scaleMode = .aspectFill
-        
-        let transition = SKTransition.fade(with: .red, duration: 1)
-        let presentAction = SKAction.run {
-            self.view?.presentScene(gameOver, transition: transition)
-        }
-        
-        let gameOverSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentAction])
-        
-        run(gameOverSequence)*/
-        
     }
     
     func setupFinishPLayer() {
-         player.removeAllActions()
-         
-         UserDefaults.standard.set(true, forKey: "gameIsSuccess" )
-         presentNextScene()
-         
-        /*let finishStage = EndGame(size: view!.frame.size)
-         
-         finishStage.scaleMode = scaleMode
-         
-         let transition = SKTransition.fade(with: .green, duration: 0.5)
-         let presentAction = SKAction.run {
-             self.view?.presentScene(finishStage, transition: transition)
-         }
-         
-         let finishStageSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentAction])
-         
-         run(finishStageSequence)*/
-         
+        player.removeAllActions()
+        UserDefaults.standard.set(true, forKey: "gameIsSuccess" )
+        stageOneBacksongAudio.stop()
+        presentNextScene()
      }
     
     func setupTuas(asset: SKSpriteNode) {
@@ -209,50 +175,60 @@ class StageOne: SKScene {
         
         asset.run(tuasAction,withKey: "changeTuas")
     }
+    
+    func performCollectItemAction() {
+        collectibleItem += 1
+        lblCountCollectibleItem.text = String(collectibleItem)
+        
+        run(SKAction.playSoundFileNamed("SFX-collect-item.wav", waitForCompletion: false))
+    }
 }
 
 extension StageOne: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
+        
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-        //contact 1 buat jump
-        if contactMask == PhysicCategory.player | PhysicCategory.push{
-           let jumpUpAction = SKAction.moveBy(x: 0, y: 350, duration: 0.5)
-           // move down 20
-           //let jumpDownAction = SKAction.moveBy(x: 0, y: -200, duration: 0.2)
-           // sequence of move yup then down
-           let jumpSequence = SKAction.sequence([jumpUpAction])
+        
+        switch contactMask {
+        case PhysicCategory.player | PhysicCategory.push:
+            // contact character for jumping action
+            let jumpUpAction = SKAction.moveBy(x: 0, y: 350, duration: 0.5)
+            let jumpSequence = SKAction.sequence([jumpUpAction])
 
-           // make player run sequence
-           player.run(jumpSequence)
-           player.run(jumpingAction, withKey: "jumpingAnimation")
-        } else if contactMask == PhysicCategory.player | PhysicCategory.tuas{
+            // run character jump sequence actions
+            player.run(jumpSequence)
+            player.run(jumpingAction, withKey: "jumpingAnimation")
+        case PhysicCategory.player | PhysicCategory.tuas:
+            // contact with "tuas"
             let tuas = (contact.bodyB.node?.name == "tuas" ? contact.bodyB.node : contact.bodyA.node) as! SKSpriteNode
             setupTuas(asset: tuas)
             self.removeChildren(in: [pintu])
-                      
-        } else if contactMask == PhysicCategory.player | PhysicCategory.fire {
+        case PhysicCategory.player | PhysicCategory.fire:
+            // contact with challenge "duri"
+            charDamageAudio.setVolume(Float(15), fadeDuration: 1)
             charDamageAudio.play()
-            
-            if !isAlive {
-                    return
-                }
-                
-                lives += -1
-                
-                if !isAlive {
-                    setupDyingPLayer()
-                }
-                
-//                var node: SKNode? = nil
-//                if contact.bodyA.node?.name == "player" {
-//                    node = contact.bodyA.node
-//                } else {
-//                    node = contact.bodyB.node
-//                }
-//                node?.run(SKAction.removeFromParent())
-            } else if contactMask == PhysicCategory.player | PhysicCategory.finish {
-               setupFinishPLayer()
-            }
+            if !isAlive { return }
+            lives += -1
+            if !isAlive { setupDyingPLayer() }
+        case PhysicCategory.player | PhysicCategory.photo1:
+            // contact with photo item 1
+            photo1.removeFromParent()
+            performCollectItemAction()
+        case PhysicCategory.player | PhysicCategory.photo2:
+            // contact with photo item 2
+            photo2.removeFromParent()
+            performCollectItemAction()
+        case PhysicCategory.player | PhysicCategory.photo3:
+            // contact with photo item 3
+            photo3.removeFromParent()
+            performCollectItemAction()
+        case PhysicCategory.player | PhysicCategory.photo4:
+            // contact with photo item 4
+            photo4.removeFromParent()
+            performCollectItemAction()
+        default:
+            setupFinishPLayer()
+        }
     }
 }
 

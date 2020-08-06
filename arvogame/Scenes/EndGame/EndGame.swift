@@ -8,8 +8,11 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class EndGame: SKScene {
+    
+    var caseGameWin : Bool = true
     
     var titleLabel : SKLabelNode!
     var kotakHartaKarun : SKSpriteNode!
@@ -24,8 +27,16 @@ class EndGame: SKScene {
     var button02 : SKSpriteNode!
     var statusKotak : SKLabelNode!
     var backgroundScreen : SKSpriteNode!
+    var winAudio = AVAudioPlayer()
+    var loseAudio = AVAudioPlayer()
     
     override func didMove(to view: SKView) {
+        
+        if UserDefaults.standard.bool(forKey: "gameIsSuccess") == true {
+            caseGameWin = true
+        } else{
+            caseGameWin = false
+        }
         
         buildTitle()
         buildButton()
@@ -34,9 +45,10 @@ class EndGame: SKScene {
         buildStatusKotak()
         buildStar()
         buidlWaktuText()
+        setupAudio()
     }
     
-    func buildTitle(){
+    func buildTitle() {
         
         titleLabel = (childNode(withName: "judul") as! SKLabelNode)
         titleLabel.fontName = "PressStart2P"
@@ -45,17 +57,24 @@ class EndGame: SKScene {
         titleLabel.fontColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
         
         if UserDefaults.standard.bool(forKey: "gameIsSuccess") == true {
-            
             titleLabel.text = "MISI SELESAI"
         } else{
-            
             titleLabel.text = "MISI GAGAL"
         }
-        
-        
     }
     
-    func buildStar (){
+    func setupAudio() {
+        setupWinAudio()
+        setupLoseAudio()
+        
+        if caseGameWin {
+            winAudio.play()
+        } else if !caseGameWin {
+            loseAudio.play()
+        }
+    }
+    
+    func buildStar () {
         
         bintang01 = (childNode(withName: "bintang01") as! SKSpriteNode)
         bintang02 = (childNode(withName: "bintang02") as! SKSpriteNode)
@@ -83,19 +102,12 @@ class EndGame: SKScene {
         if UserDefaults.standard.bool(forKey: "gameIsSuccess") == true {
             
             button02.texture = SKTexture(imageNamed: "lanjut")
-
-        
-            
         } else {
-            
              button02.texture = SKTexture(imageNamed: "ulangi")
-             
         }
-        
     }
     
     func buildFotoText() {
-        
         jumlahFoto = (childNode(withName: "jumlahFoto") as! SKLabelNode)
         jumlahFoto.text = "3/5"
         jumlahFoto.fontName = "PressStart2P"
@@ -105,46 +117,35 @@ class EndGame: SKScene {
     }
     
     func buidlWaktuText() {
-        
         totalWaktu = (childNode(withName: "jumlahWaktu") as! SKLabelNode)
         totalWaktu.text = "1 m 23 s"
         totalWaktu.fontName = "PressStart2P"
         totalWaktu.fontSize = 30
         totalWaktu.zPosition = 3
         totalWaktu.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
     }
     
-    func buildStatusKotak(){
-        
+    func buildStatusKotak() {
         statusKotak = (childNode(withName: "statusKotak") as! SKLabelNode)
         statusKotak.fontName = "PressStart2P"
         statusKotak.fontSize = 12
         statusKotak.zPosition = 3
         statusKotak.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        
 
         if UserDefaults.standard.bool(forKey: "gameIsSuccess") == true {
-            
             statusKotak.text = "SEMPURNA"
-        
-            
         } else{
-            
             statusKotak.text = "COBA LAGI"
         }
-        
     }
     
-    func buildBackground(){
-        
+    func buildBackground() {
         backgroundScreen = SKSpriteNode(imageNamed: "end-bg")
         backgroundScreen.position = CGPoint(x: 0, y: 0)
         backgroundScreen.zPosition = 0
         backgroundScreen.size = CGSize(width: 1792, height: 875)
         
         self.addChild(backgroundScreen)
-        
     }
     
     func presentHomeScene() {
@@ -175,21 +176,22 @@ class EndGame: SKScene {
         }
     }
     
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-         guard let touch  = touches.first else { return }
+        guard let touch  = touches.first else { return }
                
-               if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
-                   if node == button01 {
-                       //buttonStartAudio.play()
-                       presentHomeScene()
-                   } else if node == button02 && titleLabel.text == "MISI GAGAL"{
-                       tryAgain()
-                        //self.view?.endEditing(true)
-                   }
-               }
-           }
+        if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
+            if node == button01 {
+                presentHomeScene()
+                winAudio.stop()
+                loseAudio.stop()
+            } else if node == button02 && titleLabel.text == "MISI GAGAL" {
+                tryAgain()
+                winAudio.stop()
+                loseAudio.stop()
+            }
+        }
     }
+}
     
 
 
