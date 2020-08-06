@@ -15,6 +15,8 @@
 		3F3D9EEA24D1C7A300D0006C /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EE924D1C7A300D0006C /* Loading.swift */; };
 		3F3D9EED24D2885100D0006C /* ChooseCharacter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F3D9EEC24D2885100D0006C /* ChooseCharacter.sks */; };
 		3F3D9EEF24D2886E00D0006C /* ChooseCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EEE24D2886E00D0006C /* ChooseCharacter.swift */; };
+		3F97652124DABF28003ECFD1 /* EndGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F97652024DABF28003ECFD1 /* EndGame.sks */; };
+		3F97652324DABF41003ECFD1 /* EndGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97652224DABF41003ECFD1 /* EndGame.swift */; };
 		4526E7E824CEC62500C38745 /* StageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4526E7E724CEC62500C38745 /* StageOne.sks */; };
 		4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4526E7E924CEC66300C38745 /* StageOne.swift */; };
 		455EF63C24D9435E00DC53CC /* FinishStageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455EF63B24D9435E00DC53CC /* FinishStageOne.swift */; };
@@ -57,6 +59,8 @@
 		3F3D9EE924D1C7A300D0006C /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		3F3D9EEC24D2885100D0006C /* ChooseCharacter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ChooseCharacter.sks; sourceTree = "<group>"; };
 		3F3D9EEE24D2886E00D0006C /* ChooseCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCharacter.swift; sourceTree = "<group>"; };
+		3F97652024DABF28003ECFD1 /* EndGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGame.sks; sourceTree = "<group>"; };
+		3F97652224DABF41003ECFD1 /* EndGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGame.swift; sourceTree = "<group>"; };
 		4526E7E724CEC62500C38745 /* StageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageOne.sks; sourceTree = "<group>"; };
 		4526E7E924CEC66300C38745 /* StageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageOne.swift; sourceTree = "<group>"; };
 		455EF63B24D9435E00DC53CC /* FinishStageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishStageOne.swift; sourceTree = "<group>"; };
@@ -131,6 +135,15 @@
 				B7DC99B824DAA82700753B48 /* ChooseCharacter+ExtensionSound.swift */,
 			);
 			path = ChooseCharacter;
+			sourceTree = "<group>";
+		};
+		3F97651F24DABEFA003ECFD1 /* EndGame */ = {
+			isa = PBXGroup;
+			children = (
+				3F97652024DABF28003ECFD1 /* EndGame.sks */,
+				3F97652224DABF41003ECFD1 /* EndGame.swift */,
+			);
+			path = EndGame;
 			sourceTree = "<group>";
 		};
 		4526E7EB24CEC68800C38745 /* Stage */ = {
@@ -247,6 +260,7 @@
 				4526E7EB24CEC68800C38745 /* Stage */,
 				3F3D9ED824D13DF500D0006C /* InputName */,
 				3F3D9EE624D1C74600D0006C /* Loading */,
+				3F97651F24DABEFA003ECFD1 /* EndGame */,
 				3F3D9EEB24D2882F00D0006C /* ChooseCharacter */,
 			);
 			path = Scenes;
@@ -325,6 +339,7 @@
 				4526E7E824CEC62500C38745 /* StageOne.sks in Resources */,
 				B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */,
 				3F3D9EE824D1C76B00D0006C /* Loading.sks in Resources */,
+				3F97652124DABF28003ECFD1 /* EndGame.sks in Resources */,
 				B7DC99B624DA9D6000753B48 /* SFX-char-damage.mp3 in Resources */,
 				3F3D9EE024D16D8C00D0006C /* BGM_Intro.mp3 in Resources */,
 				B7DC99B524DA9D6000753B48 /* SFX-char-jump.wav in Resources */,
@@ -365,6 +380,7 @@
 				3F3D9EDC24D13E8300D0006C /* InputName.swift in Sources */,
 				B7A1C21F24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift in Sources */,
 				B7F6D41D24D9BD7900E3386A /* InputName+ExtensionSound.swift in Sources */,
+				3F97652324DABF41003ECFD1 /* EndGame.swift in Sources */,
 				3F3D9EDE24D1612000D0006C /* InputNameCustomClass.swift in Sources */,
 				B7DC99AD24DA98D600753B48 /* StageOne+ExtensionSound.swift in Sources */,
 				B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */,
@@ -514,7 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W5ZPF478J8;
+				DEVELOPMENT_TEAM = FD685GWNYN;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -532,7 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W5ZPF478J8;
+				DEVELOPMENT_TEAM = FD685GWNYN;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

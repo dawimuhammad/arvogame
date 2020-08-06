@@ -51,6 +51,7 @@ class StageOne: SKScene {
     var jumpAudio = AVAudioPlayer()
     var charDamageAudio = AVAudioPlayer()
     
+    
     var lives = 1
         var isAlive: Bool {
         return lives > 0
@@ -160,12 +161,29 @@ class StageOne: SKScene {
         jumpingAction = SKAction.repeat(SKAction.animate(with: textures, timePerFrame: 0.1), count: 1)
     }
     
+    func presentNextScene() {
+        if let scene = SKScene (fileNamed: "EndGame") {
+            scene.scaleMode = .aspectFill
+            
+            let presentScene = SKAction.run {
+                self.view?.presentScene(scene)
+            }
+            
+            let presentSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentScene])
+            
+            run(presentSequence)
+        }
+    }
+    
     func setupDyingPLayer() {
         player.removeAllActions()
         
-        let gameOver = GameOverStageOne(size: view!.frame.size)
+        UserDefaults.standard.set(false, forKey: "gameIsSuccess")
+        presentNextScene()
         
-        gameOver.scaleMode = scaleMode
+        /*let gameOver = InputName(size: view!.frame.size)
+        
+        gameOver.scaleMode = .aspectFill
         
         let transition = SKTransition.fade(with: .red, duration: 1)
         let presentAction = SKAction.run {
@@ -174,14 +192,17 @@ class StageOne: SKScene {
         
         let gameOverSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentAction])
         
-        run(gameOverSequence)
+        run(gameOverSequence)*/
         
     }
     
     func setupFinishPLayer() {
          player.removeAllActions()
          
-         let finishStage = FinishStageOne(size: view!.frame.size)
+         UserDefaults.standard.set(true, forKey: "gameIsSuccess" )
+         presentNextScene()
+         
+        /*let finishStage = EndGame(size: view!.frame.size)
          
          finishStage.scaleMode = scaleMode
          
@@ -192,7 +213,7 @@ class StageOne: SKScene {
          
          let finishStageSequence = SKAction.sequence([SKAction.wait(forDuration: 1), presentAction])
          
-         run(finishStageSequence)
+         run(finishStageSequence)*/
          
      }
     

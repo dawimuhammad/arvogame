@@ -57,10 +57,12 @@ class Loading: SKScene {
         case "ular":
             informationText = SKLabelNode(text: "Ular piton merupakan salah satu penghuni lahan gambut, dengan ukuran besar dan panjang ular ini harus dihindari, namun jangan disakiti")
             informationText.fontName = "PressStart2P"
-            informationText.fontSize = 12
+            informationText.numberOfLines = 5
+            informationText.preferredMaxLayoutWidth = 700
+            informationText.fontSize = 24
             informationText.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             informationText.zPosition = 10
-            informationText.position = CGPoint(x: informationPicture.position.x+50, y: informationPicture.position.y)
+            informationText.position = CGPoint(x: informationPicture.position.x+250, y: informationPicture.position.y-100)
             informationText.horizontalAlignmentMode = .left
         
             
@@ -70,10 +72,12 @@ class Loading: SKScene {
         case "kosmetik":
             informationText = SKLabelNode(text: "Kamu bisa menekan angka kerusakan gambut dengan cara memeriksa kandungan pada barang yang kamu pakai, semakin rendah minyak sawit pada produkmu, semakin baik dampaknya terhadap gambut!")
             informationText.fontName = "PressStart2P"
-            informationText.fontSize = 12
+            informationText.numberOfLines = 5
+            informationText.preferredMaxLayoutWidth = 700
+            informationText.fontSize = 24
             informationText.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             informationText.zPosition = 10
-            informationText.position = CGPoint(x: informationPicture.position.x+50, y: informationPicture.position.y)
+            informationText.position = CGPoint(x: informationPicture.position.x+250, y: informationPicture.position.y-100)
             informationText.horizontalAlignmentMode = .left
             
             self.addChild(informationText)
@@ -81,10 +85,12 @@ class Loading: SKScene {
         case "sawit":
             informationText = SKLabelNode(text: "Lahan gambut sering kali dirusak keberadaannya karena banyak pengusaha kelapa sawit nakal yang mencoba memperluas usahanya, tapi tidak semua pengusaha kelapa sawit itu nakal ya!")
             informationText.fontName = "PressStart2P"
-            informationText.fontSize = 12
+            informationText.numberOfLines = 5
+            informationText.preferredMaxLayoutWidth = 700
+            informationText.fontSize = 24
             informationText.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
             informationText.zPosition = 10
-            informationText.position = CGPoint(x: informationPicture.position.x+50, y: informationPicture.position.y)
+            informationText.position = CGPoint(x: informationPicture.position.x+250, y: informationPicture.position.y-100)
             informationText.horizontalAlignmentMode = .left
             
             self.addChild(informationText)
