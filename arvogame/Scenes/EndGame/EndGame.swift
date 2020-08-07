@@ -13,6 +13,8 @@ import AVFoundation
 class EndGame: SKScene {
     
     var caseGameWin : Bool = true
+    var collectibleItem = 0
+    var gameTimeInSecs = 0
     
     var titleLabel : SKLabelNode!
     var kotakHartaKarun : SKSpriteNode!
@@ -37,6 +39,9 @@ class EndGame: SKScene {
         } else{
             caseGameWin = false
         }
+        
+        collectibleItem = UserDefaults.standard.integer(forKey: "collectibleItem")
+        gameTimeInSecs = UserDefaults.standard.integer(forKey: "gameTimeInSecs")
         
         buildTitle()
         buildButton()
@@ -109,7 +114,7 @@ class EndGame: SKScene {
     
     func buildFotoText() {
         jumlahFoto = (childNode(withName: "jumlahFoto") as! SKLabelNode)
-        jumlahFoto.text = "3/5"
+        jumlahFoto.text = "\(collectibleItem) / 4"
         jumlahFoto.fontName = "PressStart2P"
         jumlahFoto.fontSize = 30
         jumlahFoto.zPosition = 3
@@ -118,7 +123,7 @@ class EndGame: SKScene {
     
     func buidlWaktuText() {
         totalWaktu = (childNode(withName: "jumlahWaktu") as! SKLabelNode)
-        totalWaktu.text = "1 m 23 s"
+        totalWaktu.text = "\(gameTimeInSecs) detik"
         totalWaktu.fontName = "PressStart2P"
         totalWaktu.fontSize = 30
         totalWaktu.zPosition = 3
@@ -128,7 +133,7 @@ class EndGame: SKScene {
     func buildStatusKotak() {
         statusKotak = (childNode(withName: "statusKotak") as! SKLabelNode)
         statusKotak.fontName = "PressStart2P"
-        statusKotak.fontSize = 12
+        statusKotak.fontSize = 20
         statusKotak.zPosition = 3
         statusKotak.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 

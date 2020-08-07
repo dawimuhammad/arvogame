@@ -39,6 +39,8 @@ class StageOne: SKScene {
     var jumpAudio = AVAudioPlayer()
     var charDamageAudio = AVAudioPlayer()
     
+    var timer: Timer?
+    var gameTimeInSecs = 0
     
     var lives = 1
         var isAlive: Bool {
@@ -54,7 +56,6 @@ class StageOne: SKScene {
         setupRunningAudio()
         setupJumpAudio()
         setupCharDamageAudio()
-        //givePhysicMap()
         
         player = (childNode(withName: "player") as! SKSpriteNode)
         leftButton = (childNode(withName: "//leftButton") as! SKSpriteNode)
@@ -69,6 +70,8 @@ class StageOne: SKScene {
         photo4 = (childNode(withName: "photo4") as! SKSpriteNode)
         
         physicsWorld.contactDelegate = self
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTheGameTime), userInfo: nil, repeats: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -91,7 +94,7 @@ class StageOne: SKScene {
             } else if node == jumpButton{
                 
                 //player.removeAction(forKey: "runningAnimation")
-//                player.physicsBody?.restitution = 5.0
+                //player.physicsBody?.restitution = 5.0
                 // move up 20
                 let jumpUpAction = SKAction.moveBy(x: 0, y: 300, duration: 0.5)
                 // move down 20
@@ -152,19 +155,16 @@ class StageOne: SKScene {
         }
     }
     
-    func setupDyingPLayer() {
+    func setupIsPlayerWin(isPlayerWin: Bool) {
+        timer?.invalidate()
+        timer = nil
         player.removeAllActions()
-        
-        UserDefaults.standard.set(false, forKey: "gameIsSuccess")
-        presentNextScene()
-    }
-    
-    func setupFinishPLayer() {
-        player.removeAllActions()
-        UserDefaults.standard.set(true, forKey: "gameIsSuccess" )
+        UserDefaults.standard.set(isPlayerWin, forKey: "gameIsSuccess")
+        UserDefaults.standard.set(gameTimeInSecs, forKey: "gameTimeInSecs")
+        UserDefaults.standard.set(collectibleItem, forKey: "collectibleItem")
         stageOneBacksongAudio.stop()
         presentNextScene()
-     }
+    }
     
     func setupTuas(asset: SKSpriteNode) {
         var textures = [SKTexture]()
@@ -182,6 +182,10 @@ class StageOne: SKScene {
         
         run(SKAction.playSoundFileNamed("SFX-collect-item.wav", waitForCompletion: false))
     }
+    
+    @objc func tickTheGameTime() {
+        gameTimeInSecs += 1
+    }
 }
 
 extension StageOne: SKPhysicsContactDelegate {
@@ -190,44 +194,48 @@ extension StageOne: SKPhysicsContactDelegate {
         let contactMask = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
         
         switch contactMask {
-        case PhysicCategory.player | PhysicCategory.push:
-            // contact character for jumping action
-            let jumpUpAction = SKAction.moveBy(x: 0, y: 350, duration: 0.5)
-            let jumpSequence = SKAction.sequence([jumpUpAction])
+            case PhysicCategory.player | PhysicCategory.push:
+                // contact character for jumping action
+                let jumpUpAction = SKAction.moveBy(x: 0, y: 350, duration: 0.5)
+                let jumpSequence = SKAction.sequence([jumpUpAction])
 
-            // run character jump sequence actions
-            player.run(jumpSequence)
-            player.run(jumpingAction, withKey: "jumpingAnimation")
-        case PhysicCategory.player | PhysicCategory.tuas:
-            // contact with "tuas"
-            let tuas = (contact.bodyB.node?.name == "tuas" ? contact.bodyB.node : contact.bodyA.node) as! SKSpriteNode
-            setupTuas(asset: tuas)
-            self.removeChildren(in: [pintu])
-        case PhysicCategory.player | PhysicCategory.fire:
-            // contact with challenge "duri"
-            charDamageAudio.setVolume(Float(15), fadeDuration: 1)
-            charDamageAudio.play()
-            if !isAlive { return }
-            lives += -1
-            if !isAlive { setupDyingPLayer() }
-        case PhysicCategory.player | PhysicCategory.photo1:
-            // contact with photo item 1
-            photo1.removeFromParent()
-            performCollectItemAction()
-        case PhysicCategory.player | PhysicCategory.photo2:
-            // contact with photo item 2
-            photo2.removeFromParent()
-            performCollectItemAction()
-        case PhysicCategory.player | PhysicCategory.photo3:
-            // contact with photo item 3
-            photo3.removeFromParent()
-            performCollectItemAction()
-        case PhysicCategory.player | PhysicCategory.photo4:
-            // contact with photo item 4
-            photo4.removeFromParent()
-            performCollectItemAction()
-        default:
-            setupFinishPLayer()
+                // run character jump sequence actions
+                player.run(jumpSequence)
+                player.run(jumpingAction, withKey: "jumpingAnimation")
+            case PhysicCategory.player | PhysicCategory.tuas:
+                // contact with "tuas"
+                let tuas = (contact.bodyB.node?.name == "tuas" ? contact.bodyB.node : contact.bodyA.node) as! SKSpriteNode
+                setupTuas(asset: tuas)
+                self.removeChildren(in: [pintu])
+            case PhysicCategory.player | PhysicCategory.fire:
+                // contact with challenge "duri"
+                charDamageAudio.setVolume(Float(15), fadeDuration: 1)
+                charDamageAudio.play()
+                if !isAlive { return }
+                lives += -1
+                if !isAlive { setupIsPlayerWin(isPlayerWin: false) }
+            case PhysicCategory.player | PhysicCategory.photo1:
+                // contact with photo item 1
+                photo1.removeFromParent()
+                performCollectItemAction()
+            case PhysicCategory.player | PhysicCategory.photo2:
+                // contact with photo item 2
+                photo2.removeFromParent()
+                performCollectItemAction()
+            case PhysicCategory.player | PhysicCategory.photo3:
+                // contact with photo item 3
+                photo3.removeFromParent()
+                performCollectItemAction()
+            case PhysicCategory.player | PhysicCategory.photo4:
+                // contact with photo item 4
+                photo4.removeFromParent()
+                performCollectItemAction()
+            case PhysicCategory.player | PhysicCategory.finish:
+                // contact with finish flag
+                setupIsPlayerWin(isPlayerWin: true)
+            default:
+                print("No Matched Contact!")
+                setupIsPlayerWin(isPlayerWin: false)
         }
     }
 }
