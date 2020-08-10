@@ -20,6 +20,7 @@
 		4526E7E824CEC62500C38745 /* StageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4526E7E724CEC62500C38745 /* StageOne.sks */; };
 		4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4526E7E924CEC66300C38745 /* StageOne.swift */; };
 		45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 45B9D56C24D15ADB000C595A /* MyTileSet.sks */; };
+		B70BCC9A24E1B2E8002BB307 /* SFX-lever.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B70BCC9924E1B2E8002BB307 /* SFX-lever.mp3 */; };
 		B727D9FE24CAD842008A9834 /* 8-BIT-WONDER.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B727D9FC24CAD842008A9834 /* 8-BIT-WONDER.TTF */; };
 		B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B727D9FD24CAD842008A9834 /* PRESSSTART2P.TTF */; };
 		B75E965324D02FDC00F3A29D /* HomeScene+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75E965224D02FDC00F3A29D /* HomeScene+ExtensionSound.swift */; };
@@ -63,6 +64,7 @@
 		4526E7E724CEC62500C38745 /* StageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageOne.sks; sourceTree = "<group>"; };
 		4526E7E924CEC66300C38745 /* StageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageOne.swift; sourceTree = "<group>"; };
 		45B9D56C24D15ADB000C595A /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
+		B70BCC9924E1B2E8002BB307 /* SFX-lever.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SFX-lever.mp3"; sourceTree = "<group>"; };
 		B727D9FC24CAD842008A9834 /* 8-BIT-WONDER.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "8-BIT-WONDER.TTF"; sourceTree = "<group>"; };
 		B727D9FD24CAD842008A9834 /* PRESSSTART2P.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PRESSSTART2P.TTF; sourceTree = "<group>"; };
 		B75E965224D02FDC00F3A29D /* HomeScene+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeScene+ExtensionSound.swift"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		B75E965624D0339000F3A29D /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				B70BCC9924E1B2E8002BB307 /* SFX-lever.mp3 */,
 				B7DC99B224DA9D6000753B48 /* SFX-char-damage.mp3 */,
 				B7DC99B124DA9D6000753B48 /* SFX-char-jump.wav */,
 				B7DC99B024DA9D6000753B48 /* SFX-collect-item.wav */,
@@ -346,6 +349,7 @@
 				B75E965524D0327D00F3A29D /* BGM-Home.wav in Resources */,
 				B7DC99AF24DA9A0600753B48 /* BGM-Stage-1.wav in Resources */,
 				B7DC99B724DA9D6000753B48 /* SFX-footstep.wav in Resources */,
+				B70BCC9A24E1B2E8002BB307 /* SFX-lever.mp3 in Resources */,
 				B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */,
 				B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */,
 				45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */,
