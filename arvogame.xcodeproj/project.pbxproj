@@ -530,8 +530,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = FD685GWNYN;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = W5ZPF478J8;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -541,7 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.arvogame;
 				PRODUCT_NAME = "Peat Calypso";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -550,8 +550,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = FD685GWNYN;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = W5ZPF478J8;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,7 +561,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.arvogame;
 				PRODUCT_NAME = "Peat Calypso";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

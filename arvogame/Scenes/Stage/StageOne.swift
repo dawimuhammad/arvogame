@@ -260,7 +260,7 @@ extension StageOne: SKPhysicsContactDelegate {
                 setupIsPlayerWin(isPlayerWin: true)
             default:
                 print("No Matched Contact!")
-                setupIsPlayerWin(isPlayerWin: false)
+                //setupIsPlayerWin(isPlayerWin: false)
         }
     }
 }
