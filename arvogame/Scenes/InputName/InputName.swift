@@ -78,7 +78,7 @@ class InputName: SKScene {
         guard let touch  = touches.first else { return }
         
         if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode {
-            if node == buttonLanjut {
+            if node == buttonLanjut && textField.text?.isEmpty == false{
                 buttonStartAudio.play()
                 UserDefaults.standard.set(textField.text, forKey: "characterName")
                 self.textField.removeFromSuperview()
