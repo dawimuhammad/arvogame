@@ -15,14 +15,24 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if let view = self.view as! SKView? {
+            if UserDefaults.standard.bool(forKey: "OnBoarding") == true{
+            if let scene = SKScene(fileNamed: "HomeScene") {
+                // Set the scale mode to scale to fit the window
+                scene.scaleMode = .aspectFill
+                
+                // Present the scene
+                view.presentScene(scene)
+                }}
+            if UserDefaults.standard.bool(forKey: "OnBoarding") == false{
             if let scene = SKScene(fileNamed: "PrologScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
                 // Present the scene
                 view.presentScene(scene)
-            }
+                }}
             
             view.ignoresSiblingOrder = true
             
