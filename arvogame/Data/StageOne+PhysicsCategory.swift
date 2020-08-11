@@ -18,4 +18,5 @@ struct PhysicCategory {
     static let photo2: UInt32 = 0b1000000 // 64
     static let photo3: UInt32 = 0b10000000 // 128
     static let photo4: UInt32 = 0b100000000 // 256
+    static let ground: UInt32 = 0b1000000000 // 512
 }

@@ -24,6 +24,18 @@ class InputName: SKScene {
         setupButtonStartAudio()
         
         buttonLanjut = (childNode(withName: "buttonLanjut") as! SKSpriteNode)
+  
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        self.view?.frame.origin.y = -100
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.view?.frame.origin.y = 0
     }
     
     func buildPageTitle() {
