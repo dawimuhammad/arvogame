@@ -17,6 +17,7 @@ class StageOne: SKScene {
     var leftButton: SKSpriteNode!
     var rightButton: SKSpriteNode!
     var jumpButton: SKSpriteNode!
+    var legendsGroupNode: SKSpriteNode!
     
     var pintu: SKSpriteNode!
     var photo1: SKSpriteNode!
@@ -56,11 +57,9 @@ class StageOne: SKScene {
         setupRunningAudio()
         setupJumpAudio()
         setupCharDamageAudio()
+        setupActionButtons()
         
         player = (childNode(withName: "player") as! SKSpriteNode)
-        leftButton = (childNode(withName: "//leftButton") as! SKSpriteNode)
-        rightButton = (childNode(withName: "//rightButton") as! SKSpriteNode)
-        jumpButton = (childNode(withName: "//jumpButton") as! SKSpriteNode)
         cameraNode = (childNode(withName: "camera") as! SKCameraNode)
         pintu = (childNode(withName: "pintu") as! SKSpriteNode)
         lblCountCollectibleItem = (childNode(withName: "//labelPhotoCollectCount") as! SKLabelNode)
@@ -121,6 +120,29 @@ class StageOne: SKScene {
         player.position.x = newPositionX
         self.camera?.position.x = newPositionX
         self.camera?.position.y = player.position.y + 200
+    }
+    
+    func setupActionButtons() {
+        legendsGroupNode = (childNode(withName: "//legendsGroupNode") as! SKSpriteNode)
+        leftButton = (childNode(withName: "//leftButton") as! SKSpriteNode)
+        rightButton = (childNode(withName: "//rightButton") as! SKSpriteNode)
+        jumpButton = (childNode(withName: "//jumpButton") as! SKSpriteNode)
+        
+        let constantOfConstraint = ((self.view?.frame.width)! / 4)
+        
+        let rightConstraint = (self.view?.frame.width)! - constantOfConstraint
+        let leftConstraint = 0 - rightConstraint
+        let leftSecondConstraint = leftConstraint + 250
+        
+        let legendsGroupNodeConstraint = SKConstraint.positionX(SKRange(constantValue: rightConstraint - 50))
+        let jumpBtnConstraint = SKConstraint.positionX(SKRange(constantValue: rightConstraint))
+        let leftBtnConstraint = SKConstraint.positionX(SKRange(constantValue: leftConstraint))
+        let rightBtnConstraint = SKConstraint.positionX(SKRange(constantValue: leftSecondConstraint))
+        
+        legendsGroupNode.constraints = [ legendsGroupNodeConstraint ]
+        jumpButton.constraints = [ jumpBtnConstraint ]
+        leftButton.constraints = [ leftBtnConstraint ]
+        rightButton.constraints = [ rightBtnConstraint ]
     }
     
     func setupRunningAction() {
