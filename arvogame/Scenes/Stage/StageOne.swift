@@ -171,9 +171,12 @@ class StageOne: SKScene {
               for i in 1...2 {
                   textures.append(SKTexture(imageNamed: "Tuas(\(i))"))
               }
+        
         tuasAction = SKAction.repeat(SKAction.animate(with: textures, timePerFrame: 0.2), count: 1)
         
-        asset.run(tuasAction,withKey: "changeTuas")
+        run(SKAction.playSoundFileNamed("SFX-lever.mp3", waitForCompletion: false))
+        
+        asset.run(tuasAction, withKey: "changeTuas")
     }
     
     func performCollectItemAction() {
