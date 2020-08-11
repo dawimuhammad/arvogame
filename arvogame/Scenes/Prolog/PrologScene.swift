@@ -14,6 +14,7 @@ class PrologScene: SKScene {
     
     var prologMessageLabelNode : SKLabelNode!
     var buttonSkip: SKLabelNode!
+    var boxButtonSkip: SKSpriteNode!
     var buttonNextProlog: SKSpriteNode!
     var bgImage: SKSpriteNode!
     var timer: Timer?
@@ -25,12 +26,19 @@ class PrologScene: SKScene {
     var messageStringCounter = 0
     
     override func didMove(to view: SKView) {
-        buttonSkip = (childNode(withName: "//SkipButtonText") as! SKLabelNode)
-        
         setupPrologBacksongAudio()
         setupPrologMessage()
         constructDialogBox()
+        setupButtonSkip()
         prologBacksongAudio.play()
+    }
+    
+    func setupButtonSkip() {
+        buttonSkip = (childNode(withName: "//SkipButtonText") as! SKLabelNode)
+        boxButtonSkip = (childNode(withName: "//SkipButton") as! SKSpriteNode)
+        
+        let buttonSkipConstraint = (self.view?.frame.width)! - ((self.view?.frame.width)! / 4)
+        boxButtonSkip.constraints = [ SKConstraint.positionX(SKRange(constantValue: buttonSkipConstraint)) ]
     }
     
     func setupPrologMessage() {
