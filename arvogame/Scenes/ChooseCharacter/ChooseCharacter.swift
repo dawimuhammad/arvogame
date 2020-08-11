@@ -28,6 +28,8 @@ class ChooseCharacter: SKScene {
         buildPageTitle()
         buildBackground()
         setupButtonLanjutAudio()
+        UserDefaults.standard.set(false, forKey: "man")
+        UserDefaults.standard.set(false, forKey: "woman")
     }
     
     func buildCharacter(){
@@ -116,9 +118,7 @@ class ChooseCharacter: SKScene {
         if let node = self.nodes(at: touch.location(in: self)).first as? SKSpriteNode{
             buttonLanjutAudio.play()
             
-            if node == lanjutButton {
-                presentNextScene()
-            } else if node == manCharacter {
+            if node == manCharacter {
                 UserDefaults.standard.set(true, forKey: "man")
                 manCharacter.alpha = 0.5
                 womanCharacter.alpha = 1
@@ -126,6 +126,9 @@ class ChooseCharacter: SKScene {
                 UserDefaults.standard.set(true, forKey: "woman")
                 manCharacter.alpha = 1
                 womanCharacter.alpha = 0.5
+            } else if node == lanjutButton && (UserDefaults.standard.bool(forKey: "man") == true || UserDefaults.standard.bool(forKey: "woman") == true){
+                presentNextScene()
+                UserDefaults.standard.set(true, forKey: "OnBoarding")
             }
         }
     }
