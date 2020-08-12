@@ -71,6 +71,10 @@ class StageOne: SKScene {
         physicsWorld.contactDelegate = self
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTheGameTime), userInfo: nil, repeats: true)
+        
+        UserDefaults.standard.set(false, forKey: "gameIsSuccess")
+        UserDefaults.standard.set(0, forKey: "gameTimeInSecs")
+        UserDefaults.standard.set(0, forKey: "collectibleItem")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
