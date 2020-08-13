@@ -17,7 +17,7 @@ class StageOne: SKScene {
     var leftButton: SKSpriteNode!
     var rightButton: SKSpriteNode!
     var jumpButton: SKSpriteNode!
-    //var legendsGroupNode: SKSpriteNode!
+    var legendsGroupNode: SKSpriteNode!
     
     var pintu: SKSpriteNode!
     var photo1: SKSpriteNode!
@@ -164,7 +164,7 @@ class StageOne: SKScene {
     }
     
     func setupActionButtons() {
-        //legendsGroupNode = (childNode(withName: "//legendsGroupNode") as! SKSpriteNode)
+        legendsGroupNode = (childNode(withName: "//legendsGroupNode") as! SKSpriteNode)
         leftButton = (childNode(withName: "//leftButton") as! SKSpriteNode)
         rightButton = (childNode(withName: "//rightButton") as! SKSpriteNode)
         jumpButton = (childNode(withName: "//jumpButton") as! SKSpriteNode)
@@ -175,12 +175,12 @@ class StageOne: SKScene {
         let leftConstraint = 0 - rightConstraint
         let leftSecondConstraint = leftConstraint + 250
         
-        //let legendsGroupNodeConstraint = SKConstraint.positionX(SKRange(constantValue: rightConstraint - 50))
+        let legendsGroupNodeConstraint = SKConstraint.positionX(SKRange(constantValue: rightConstraint - 50))
         let jumpBtnConstraint = SKConstraint.positionX(SKRange(constantValue: rightConstraint))
         let leftBtnConstraint = SKConstraint.positionX(SKRange(constantValue: leftConstraint))
         let rightBtnConstraint = SKConstraint.positionX(SKRange(constantValue: leftSecondConstraint))
         
-        //legendsGroupNode.constraints = [ legendsGroupNodeConstraint ]
+        legendsGroupNode.constraints = [ legendsGroupNodeConstraint ]
         jumpButton.constraints = [ jumpBtnConstraint ]
         leftButton.constraints = [ leftBtnConstraint ]
         rightButton.constraints = [ rightBtnConstraint ]
