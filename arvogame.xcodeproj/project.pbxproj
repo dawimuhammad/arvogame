@@ -17,7 +17,6 @@
 		3F3D9EEF24D2886E00D0006C /* ChooseCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D9EEE24D2886E00D0006C /* ChooseCharacter.swift */; };
 		3F97652124DABF28003ECFD1 /* EndGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F97652024DABF28003ECFD1 /* EndGame.sks */; };
 		3F97652324DABF41003ECFD1 /* EndGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F97652224DABF41003ECFD1 /* EndGame.swift */; };
-		4526E7E824CEC62500C38745 /* StageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4526E7E724CEC62500C38745 /* StageOne.sks */; };
 		4526E7EA24CEC66300C38745 /* StageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4526E7E924CEC66300C38745 /* StageOne.swift */; };
 		45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 45B9D56C24D15ADB000C595A /* MyTileSet.sks */; };
 		B70BCC9A24E1B2E8002BB307 /* SFX-lever.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B70BCC9924E1B2E8002BB307 /* SFX-lever.mp3 */; };
@@ -28,6 +27,7 @@
 		B75E965824D0344200F3A29D /* button_click.wav in Resources */ = {isa = PBXBuildFile; fileRef = B75E965724D0344200F3A29D /* button_click.wav */; };
 		B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B76CED5E24C98FC600E16060 /* HomeScene.sks */; };
 		B76CED6124C98FD400E16060 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76CED6024C98FD400E16060 /* HomeScene.swift */; };
+		B783865624E53AA5004012AB /* StageOne.sks in Resources */ = {isa = PBXBuildFile; fileRef = B783865524E53AA5004012AB /* StageOne.sks */; };
 		B7A1C21F24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A1C21E24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift */; };
 		B7C39C1224C1922300214EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C39C1124C1922300214EA4 /* AppDelegate.swift */; };
 		B7C39C1A24C1922300214EA4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C39C1924C1922300214EA4 /* GameViewController.swift */; };
@@ -61,7 +61,6 @@
 		3F3D9EEE24D2886E00D0006C /* ChooseCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCharacter.swift; sourceTree = "<group>"; };
 		3F97652024DABF28003ECFD1 /* EndGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndGame.sks; sourceTree = "<group>"; };
 		3F97652224DABF41003ECFD1 /* EndGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGame.swift; sourceTree = "<group>"; };
-		4526E7E724CEC62500C38745 /* StageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageOne.sks; sourceTree = "<group>"; };
 		4526E7E924CEC66300C38745 /* StageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageOne.swift; sourceTree = "<group>"; };
 		45B9D56C24D15ADB000C595A /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
 		B70BCC9924E1B2E8002BB307 /* SFX-lever.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "SFX-lever.mp3"; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		B75E965724D0344200F3A29D /* button_click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button_click.wav; sourceTree = "<group>"; };
 		B76CED5E24C98FC600E16060 /* HomeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HomeScene.sks; sourceTree = "<group>"; };
 		B76CED6024C98FD400E16060 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		B783865524E53AA5004012AB /* StageOne.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StageOne.sks; sourceTree = "<group>"; };
 		B7A1C21E24CEDA92002B77D5 /* PrologScene+ExtensionSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrologScene+ExtensionSound.swift"; sourceTree = "<group>"; };
 		B7C39C0E24C1922300214EA4 /* Peat Calypso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Peat Calypso.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C39C1124C1922300214EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 		4526E7EB24CEC68800C38745 /* Stage */ = {
 			isa = PBXGroup;
 			children = (
+				B783865524E53AA5004012AB /* StageOne.sks */,
 				4526E7E924CEC66300C38745 /* StageOne.swift */,
-				4526E7E724CEC62500C38745 /* StageOne.sks */,
 				B7DC99AC24DA98D600753B48 /* StageOne+ExtensionSound.swift */,
 			);
 			path = Stage;
@@ -337,7 +337,6 @@
 				3F3D9EED24D2885100D0006C /* ChooseCharacter.sks in Resources */,
 				B7DD0A5324DC0BDE008770FC /* BGM-Lose-Game.mp3 in Resources */,
 				B7C39C1D24C1922300214EA4 /* Main.storyboard in Resources */,
-				4526E7E824CEC62500C38745 /* StageOne.sks in Resources */,
 				B727D9FF24CAD842008A9834 /* PRESSSTART2P.TTF in Resources */,
 				3F3D9EE824D1C76B00D0006C /* Loading.sks in Resources */,
 				3F97652124DABF28003ECFD1 /* EndGame.sks in Resources */,
@@ -352,6 +351,7 @@
 				B70BCC9A24E1B2E8002BB307 /* SFX-lever.mp3 in Resources */,
 				B76CED5F24C98FC600E16060 /* HomeScene.sks in Resources */,
 				B7C39C1F24C1922400214EA4 /* Assets.xcassets in Resources */,
+				B783865624E53AA5004012AB /* StageOne.sks in Resources */,
 				45B9D56D24D15ADB000C595A /* MyTileSet.sks in Resources */,
 				B7C39C2224C1922400214EA4 /* LaunchScreen.storyboard in Resources */,
 				B7DC99B424DA9D6000753B48 /* SFX-collect-item.wav in Resources */,
@@ -530,8 +530,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 9WD83SC374;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = W5ZPF478J8;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -541,7 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.arvogame;
 				PRODUCT_NAME = "Peat Calypso";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -550,8 +550,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = 9WD83SC374;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = W5ZPF478J8;
 				INFOPLIST_FILE = arvogame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,7 +561,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledeveloperacademy.arvogame;
 				PRODUCT_NAME = "Peat Calypso";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

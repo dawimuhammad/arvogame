@@ -68,12 +68,11 @@ class StageOne: SKScene {
         setupJumpAudio()
         setupCharDamageAudio()
         setupActionButtons()
-        
+        setupSnakeActions()
         
         player = (childNode(withName: "player") as! SKSpriteNode)
         cameraNode = (childNode(withName: "camera") as! SKCameraNode)
         pintu = (childNode(withName: "pintu") as! SKSpriteNode)
-        snake = (childNode(withName: "snake") as! SKSpriteNode)
 
         lblCountCollectibleItem = (childNode(withName: "//labelPhotoCollectCount") as! SKLabelNode)
         photo1 = (childNode(withName: "photo1") as! SKSpriteNode)
@@ -85,22 +84,9 @@ class StageOne: SKScene {
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTheGameTime), userInfo: nil, repeats: true)
         
-        //Snake MOVE
-        let moveRightAction = SKAction.move(to: CGPoint(x: 1390, y: 0), duration: 5)
-        let flipRight = SKAction.scaleX(to: -1, duration: 1)
-        let rightGrup = SKAction.group([moveRightAction,flipRight])
-        
-        let moveLeftAction = SKAction.move(to: CGPoint(x: 1082, y: 0), duration: 5)
-        let flipLeft = SKAction.scaleX(to: 1, duration: 1)
-        let leftGrup = SKAction.group([moveLeftAction,flipLeft])
-
-        snakeMove = SKAction.sequence([rightGrup,leftGrup])
-        let repeatAction = SKAction.repeatForever(snakeMove)
-        
-        snake.run(repeatAction, withKey: "repeat")
-
-
-
+        UserDefaults.standard.set(false, forKey: "gameIsSuccess")
+        UserDefaults.standard.set(0, forKey: "gameTimeInSecs")
+        UserDefaults.standard.set(0, forKey: "collectibleItem")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -141,7 +127,6 @@ class StageOne: SKScene {
                     
                         jumpButton.alpha = Pressed
                 }
-                
             }
         }
     }
@@ -160,6 +145,22 @@ class StageOne: SKScene {
         player.position.x = newPositionX
         self.camera?.position.x = newPositionX
         self.camera?.position.y = player.position.y + 200
+    }
+    
+    func setupSnakeActions() {
+        snake = (childNode(withName: "snake") as! SKSpriteNode)
+        let moveRightAction = SKAction.move(to: CGPoint(x: 1390, y: 0), duration: 3)
+        let flipRight = SKAction.scaleX(to: -1, duration: 1)
+        let rightGrup = SKAction.group([moveRightAction,flipRight])
+        
+        let moveLeftAction = SKAction.move(to: CGPoint(x: 1080, y: 0), duration: 3)
+        let flipLeft = SKAction.scaleX(to: 1, duration: 1)
+        let leftGrup = SKAction.group([moveLeftAction,flipLeft])
+
+        snakeMove = SKAction.sequence([rightGrup,leftGrup])
+        let repeatAction = SKAction.repeatForever(snakeMove)
+        
+        snake.run(repeatAction, withKey: "repeat")
     }
     
     func setupActionButtons() {

@@ -19,6 +19,7 @@ extension HomeScene {
             print(error)
         }
         
+        homeBacksongAudio.numberOfLoops = 10
         homeBacksongAudio.play()
     }
     

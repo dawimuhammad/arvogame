@@ -19,6 +19,7 @@ extension StageOne {
             print(error)
         }
         
+        stageOneBacksongAudio.numberOfLoops = 10
         stageOneBacksongAudio.play()
     }
     
