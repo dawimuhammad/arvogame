@@ -302,7 +302,6 @@ extension StageOne: SKPhysicsContactDelegate {
                 onGround = true
             default:
                 print("No Matched Contact!")
-                setupIsPlayerWin(isPlayerWin: false)
         }
     }
 }
