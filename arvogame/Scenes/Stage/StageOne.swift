@@ -25,20 +25,30 @@ class StageOne: SKScene {
     var photo3: SKSpriteNode!
     var photo4: SKSpriteNode!
     
+    var snake: SKSpriteNode!
+    
     var lblCountCollectibleItem: SKLabelNode!
     
     var cameraNode: SKCameraNode?
     
     var playerDirection: CGFloat = 0.0
+    var snakeDirection: CGFloat = 0.0
     
     var runningAction: SKAction!
     var jumpingAction: SKAction!
     var tuasAction: SKAction!
+    var snakeMove: SKAction!
+   var snakeLoop: SKAction!
+    
+    var Unpressed : CGFloat = 0.5
+    var Pressed : CGFloat = 0.9
     
     var stageOneBacksongAudio = AVAudioPlayer()
     var runAudio = AVAudioPlayer()
     var jumpAudio = AVAudioPlayer()
     var charDamageAudio = AVAudioPlayer()
+    
+    var onGround = true
     
     var timer: Timer?
     var gameTimeInSecs = 0
@@ -59,9 +69,12 @@ class StageOne: SKScene {
         setupCharDamageAudio()
         setupActionButtons()
         
+        
         player = (childNode(withName: "player") as! SKSpriteNode)
         cameraNode = (childNode(withName: "camera") as! SKCameraNode)
         pintu = (childNode(withName: "pintu") as! SKSpriteNode)
+        snake = (childNode(withName: "snake") as! SKSpriteNode)
+
         lblCountCollectibleItem = (childNode(withName: "//labelPhotoCollectCount") as! SKLabelNode)
         photo1 = (childNode(withName: "photo1") as! SKSpriteNode)
         photo2 = (childNode(withName: "photo2") as! SKSpriteNode)
@@ -71,6 +84,23 @@ class StageOne: SKScene {
         physicsWorld.contactDelegate = self
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTheGameTime), userInfo: nil, repeats: true)
+        
+        //Snake MOVE
+        let moveRightAction = SKAction.move(to: CGPoint(x: 1390, y: 0), duration: 5)
+        let flipRight = SKAction.scaleX(to: -1, duration: 1)
+        let rightGrup = SKAction.group([moveRightAction,flipRight])
+        
+        let moveLeftAction = SKAction.move(to: CGPoint(x: 1082, y: 0), duration: 5)
+        let flipLeft = SKAction.scaleX(to: 1, duration: 1)
+        let leftGrup = SKAction.group([moveLeftAction,flipLeft])
+
+        snakeMove = SKAction.sequence([rightGrup,leftGrup])
+        let repeatAction = SKAction.repeatForever(snakeMove)
+        
+        snake.run(repeatAction, withKey: "repeat")
+
+
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -84,27 +114,34 @@ class StageOne: SKScene {
                 player.run(runningAction, withKey: "runningAnimation")
                 playerDirection = -1
                 runAudio.play()
+                leftButton.alpha = Pressed
             } else if node == rightButton {
                 player.xScale = 1
                 player.yScale = 1
                 player.run(runningAction, withKey: "runningAnimation")
                 playerDirection = 1
                 runAudio.play()
+                rightButton.alpha = Pressed
             } else if node == jumpButton{
-                
-                //player.removeAction(forKey: "runningAnimation")
-                //player.physicsBody?.restitution = 5.0
-                // move up 20
-                let jumpUpAction = SKAction.moveBy(x: 0, y: 300, duration: 0.5)
-                // move down 20
-                //let jumpDownAction = SKAction.moveBy(x: 0, y: -200, duration: 0.2)
-                // sequence of move yup then down
-                let jumpSequence = SKAction.sequence([jumpUpAction])
+                if onGround{
+                    onGround = false
+                    //player.removeAction(forKey: "runningAnimation")
+                        //player.physicsBody?.restitution = 5.0
+                        // move up 20
+                        let jumpUpAction = SKAction.moveBy(x: 0, y: 300, duration: 0.5)
+                        // move down 20
+                        //let jumpDownAction = SKAction.moveBy(x: 0, y: -200, duration: 0.2)
+                        // sequence of move yup then down
+                        let jumpSequence = SKAction.sequence([jumpUpAction])
 
-                // make player run sequence
-                player.run(jumpSequence)
-                player.run(jumpingAction, withKey: "jumpingAnimation")
-                jumpAudio.play()
+                        // make player run sequence
+                        player.run(jumpSequence)
+                        player.run(jumpingAction, withKey: "jumpingAnimation")
+                        jumpAudio.play()
+                    
+                        jumpButton.alpha = Pressed
+                }
+                
             }
         }
     }
@@ -112,6 +149,9 @@ class StageOne: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         playerDirection = 0
         player.removeAction(forKey: "runningAnimation")
+        leftButton.alpha = Unpressed
+        rightButton.alpha = Unpressed
+        jumpButton.alpha = Unpressed
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -258,9 +298,10 @@ extension StageOne: SKPhysicsContactDelegate {
             case PhysicCategory.player | PhysicCategory.finish:
                 // contact with finish flag
                 setupIsPlayerWin(isPlayerWin: true)
+            case PhysicCategory.player | PhysicCategory.ground:
+                onGround = true
             default:
                 print("No Matched Contact!")
-                setupIsPlayerWin(isPlayerWin: false)
         }
     }
 }
