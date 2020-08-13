@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            if let scene = SKScene(fileNamed: "PrologScene") {
+            if let scene = SKScene(fileNamed: "StageOne") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
